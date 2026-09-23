@@ -1,0 +1,364 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Photo Gallery | Alfa Tech India</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .photos-hero {
+            background: linear-gradient(135deg, #0b1329 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 60px 0 40px 0;
+            text-align: center;
+        }
+        .photos-hero h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+        .photos-hero p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+        }
+        .photo-card {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .photo-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+        }
+        .photo-img-wrapper {
+            height: 230px;
+            background: #f8fafc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+        }
+        .photo-img-wrapper img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        .photo-card:hover .photo-img-wrapper img {
+            transform: scale(1.05);
+        }
+        .photo-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .photo-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #1e293b;
+            margin-bottom: 6px;
+        }
+        .photo-filename {
+            display: inline-block;
+            background: #f1f5f9;
+            color: #353598;
+            font-family: monospace;
+            font-size: 0.82rem;
+            padding: 4px 10px;
+            border-radius: 6px;
+            margin-bottom: 12px;
+            width: fit-content;
+        }
+        .photo-link-btn {
+            margin-top: auto;
+            color: #353598;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .photo-link-btn:hover {
+            color: #1d1d6b;
+        }
+        .filter-btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .filter-btn {
+            background: #f1f5f9;
+            color: #475569;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        .filter-btn:hover, .filter-btn.active {
+            background: #353598;
+            color: #ffffff;
+        }
+    </style>
+    <link rel="icon" href="assets/images.png/logo.png" type="image/png">
+</head>
+<body>
+
+<!-- ========== HEADER NAVIGATION ========== -->
+<div class="top-header-section">
+    <div class="container">
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="assets/images.png/watemark orginal alfa logo.png" alt="Alfa Tech India" class="logo-img" onerror="this.src='https://placehold.co/400x400/0a66c2/white?text=ALFA'">
+                <div class="brand-text">
+                    <h1>ALFA TECH INDIA</h1>
+                    <p>DAIRY EQUIPMENT SINCE 1990s</p>
+                </div>
+            </div>
+            <div class="navbar-menu">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Our Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                    <li><a href="photos.html" class="active" style="color:#353598; font-weight:700;">Photos</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ========== PHOTOS HERO ========== -->
+<section class="photos-hero">
+    <div class="container" data-aos="fade-up">
+        <h1>Equipment Photo Gallery</h1>
+        <p>Explore high-resolution product photographs of Alfa Tech India industrial machinery</p>
+    </div>
+</section>
+
+<!-- ========== PHOTOS GRID SECTION ========== -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <!-- Filter Tabs -->
+        <div class="filter-btn-group" data-aos="fade-up">
+            <button class="filter-btn active" data-filter="all">All Photos</button>
+            <button class="filter-btn" data-filter="sealing">Sealing Machines</button>
+            <button class="filter-btn" data-filter="analyzer">Milk Analysers</button>
+            <button class="filter-btn" data-filter="milking">Milking Machines</button>
+            <button class="filter-btn" data-filter="cream">Cream Separators</button>
+            <button class="filter-btn" data-filter="khoya">Khoya / Mawa</button>
+            <button class="filter-btn" data-filter="paneer">Paneer Machines</button>
+            <button class="filter-btn" data-filter="cooler">Bulk Milk Coolers</button>
+        </div>
+
+        <!-- Photos Grid -->
+        <div class="row g-4 row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4" id="photoGalleryGrid">
+            
+            <!-- Continuous Band Sealing Machine -->
+            <div class="col photo-item" data-category="sealing" data-aos="fade-up">
+                <div class="photo-card">
+                    <div class="photo-img-wrapper">
+                        <img src="assets/images.png/continuous-band-sealing-machine.png" alt="Continuous Band Sealing Machine" onerror="this.src='assets/images.png/sealing.png'">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-title">Continuous Band Sealing Machine</div>
+                        <div class="photo-filename"><i class="fas fa-file-image me-1"></i> continuous-band-sealing-machine.png</div>
+                        <a href="sealing-machine.html" class="photo-link-btn">View Product Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Milk Analyzer DYNA MILK -->
+            <div class="col photo-item" data-category="analyzer" data-aos="fade-up" data-aos-delay="100">
+                <div class="photo-card">
+                    <div class="photo-img-wrapper">
+                        <img src="assets/images.png/dyna-milk-analyzer.png" alt="Milk Analyzer DYNA MILK" onerror="this.src='assets/images.png/Essae-milk-analyzer.png'">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-title">Milk Analyzer (DYNA MILK Multi Parameter)</div>
+                        <div class="photo-filename"><i class="fas fa-file-image me-1"></i> dyna-milk-analyzer.png</div>
+                        <a href="product-milk-analyser.html" class="photo-link-btn">View Product Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Analyser Essae -->
+            <div class="col photo-item" data-category="analyzer" data-aos="fade-up" data-aos-delay="150">
+                <div class="photo-card">
+                    <div class="photo-img-wrapper">
+                        <img src="assets/images.png/Essae-milk-analyzer.png" alt="Analyser Essae">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-title">Analyser Essae (MA-825)</div>
+                        <div class="photo-filename"><i class="fas fa-file-image me-1"></i> Essae-milk-analyzer.png</div>
+                        <a href="product-milk-analyser.html" class="photo-link-btn">View Product Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ultrasonic Milk Vibrator -->
+            <div class="col photo-item" data-category="analyzer" data-aos="fade-up" data-aos-delay="200">
+                <div class="photo-card">
+                    <div class="photo-img-wrapper">
+                        <img src="assets/images.png/Ultrasonic milk Vibrator.png" alt="Ultrasonic Milk Vibrator">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-title">Ultrasonic Milk Vibrator / Stirrer</div>
+                        <div class="photo-filename"><i class="fas fa-file-image me-1"></i> Ultrasonic milk Vibrator.png</div>
+                        <a href="product-ultrasonic-analyzer.html" class="photo-link-btn">View Product Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Data Processing Unit -->
+            <div class="col photo-item" data-category="analyzer" data-aos="fade-up" data-aos-delay="250">
+                <div class="photo-card">
+                    <div class="photo-img-wrapper">
+                        <img src="assets/images.png/Data processing unit.png" alt="Data Processing Unit">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-title">Data Processing Unit (DPU)</div>
+                        <div class="photo-filename"><i class="fas fa-file-image me-1"></i> Data processing unit.png</div>
+                        <a href="product-milk-analyser.html" class="photo-link-btn">View Product Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Double Bucket Milking Machine -->
+            <div class="col photo-item" data-category="milking" data-aos="fade-up">
+                <div class="photo-card">
+                    <div class="photo-img-wrapper">
+                        <img src="assets/images.png/DoubleBucket .png" alt="Double Bucket Milking Machine" onerror="this.src='assets/withoutengin.png'">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-title">Double Bucket Milking Machine</div>
+                        <div class="photo-filename"><i class="fas fa-file-image me-1"></i> DoubleBucket.png</div>
+                        <a href="product-double-bucket.html" class="photo-link-btn">View Product Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cream Separator 500LPH -->
+            <div class="col photo-item" data-category="cream" data-aos="fade-up" data-aos-delay="100">
+                <div class="photo-card">
+                    <div class="photo-img-wrapper">
+                        <img src="assets/images.png/NewCream1.png" alt="Cream Separator 500LPH">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-title">Centrifugal Cream Separator 500 LPH</div>
+                        <div class="photo-filename"><i class="fas fa-file-image me-1"></i> NewCream1.png</div>
+                        <a href="product-cream-separator.html" class="photo-link-btn">View Product Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Khawa Machine -->
+            <div class="col photo-item" data-category="khoya" data-aos="fade-up" data-aos-delay="150">
+                <div class="photo-card">
+                    <div class="photo-img-wrapper">
+                        <img src="assets/images.png/khawa3.png" alt="Khawa / Mawa Machine" onerror="this.src='assets/images.png/mawa1.png'">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-title">Automatic Khawa / Mawa Machine</div>
+                        <div class="photo-filename"><i class="fas fa-file-image me-1"></i> khawa3.png</div>
+                        <a href="product-khoya-machine.html" class="photo-link-btn">View Product Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Paneer Plant -->
+            <div class="col photo-item" data-category="paneer" data-aos="fade-up" data-aos-delay="200">
+                <div class="photo-card">
+                    <div class="photo-img-wrapper">
+                        <img src="assets/images.png/paneer2.png" alt="Paneer Plant">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-title">Commercial Paneer Plant</div>
+                        <div class="photo-filename"><i class="fas fa-file-image me-1"></i> paneer2.png</div>
+                        <a href="product-paneer-machine.html" class="photo-link-btn">View Product Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stainless Steel Milk Cooling Tank -->
+            <div class="col photo-item" data-category="cooler" data-aos="fade-up" data-aos-delay="250">
+                <div class="photo-card">
+                    <div class="photo-img-wrapper">
+                        <img src="assets/images.png/Stainless Steel Milk Cooling Tank.png" alt="Stainless Steel Milk Cooling Tank" onerror="this.src='assets/images.png/Bulk-milk-0coolers1.png'">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-title">Stainless Steel Milk Cooling Tank</div>
+                        <div class="photo-filename"><i class="fas fa-file-image me-1"></i> Stainless Steel Milk Cooling Tank.png</div>
+                        <a href="product-bulk-cooler.html" class="photo-link-btn">View Product Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ========== FOOTER ========== -->
+<footer class="main-footer">
+    <!-- Footer content loaded via script.js -->
+</footer>
+
+<a href="https://wa.me/918047653483" class="floating-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="#" id="backToTopBtn" class="back-top-btn"><i class="fas fa-arrow-up"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="assets/js/script.js"></script>
+
+<script>
+AOS.init({ duration: 800, once: true, offset: 100 });
+
+// Photo Gallery Filtering
+document.addEventListener('DOMContentLoaded', function() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const photoItems = document.querySelectorAll('.photo-item');
+
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+
+            const filterValue = this.getAttribute('data-filter');
+
+            photoItems.forEach(item => {
+                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+    });
+});
+</script>
+</body>
+</html>
+

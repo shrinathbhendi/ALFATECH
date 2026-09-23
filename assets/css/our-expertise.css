@@ -1,0 +1,234 @@
+/* ==========================================================================
+   OUR EXPERTISE DEDICATED SECTION STYLES
+   ========================================================================== */
+
+.expertise-section-wrapper {
+    position: relative;
+    padding: 70px 0;
+    background: #ffffff;
+    overflow: hidden;
+}
+
+/* Background subtle decorative mesh circles */
+.expertise-section-wrapper::before {
+    content: '';
+    position: absolute;
+    top: -140px;
+    left: -140px;
+    width: 550px;
+    height: 550px;
+    background: radial-gradient(circle, rgba(53, 53, 152, 0.06) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.expertise-section-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: -140px;
+    right: -140px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(14, 165, 233, 0.06) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+/* Standalone Expertise Container (No Dark Box) */
+.expertise-section-card {
+    background: transparent;
+    border: none;
+    padding: 10px 0;
+    box-shadow: none;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Header Container Center Aligned */
+.expertise-header-center {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+/* Expertise Pill Badge */
+.expertise-pill-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 18px;
+    background: rgba(53, 53, 152, 0.08);
+    border: 1px solid rgba(53, 53, 152, 0.2);
+    border-radius: 50px;
+    color: #353598;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+}
+
+.expertise-pill-badge i {
+    color: #353598;
+}
+
+.expertise-card-title {
+    font-family: 'Oswald', sans-serif !important;
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: #0f172a;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.expertise-card-subtitle {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin-bottom: 0;
+}
+
+/* Expertise Narrative Text */
+.expertise-body-text {
+    font-size: 0.95rem;
+    color: #334155;
+    line-height: 1.75;
+    margin-bottom: 16px;
+}
+
+.expertise-stats-pills {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-top: 24px;
+}
+
+.stat-pill-item {
+    background: rgba(53, 53, 152, 0.06);
+    border: 1px solid rgba(53, 53, 152, 0.15);
+    padding: 10px 18px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.stat-pill-item i {
+    color: #353598;
+    font-size: 1.25rem;
+}
+
+.stat-pill-item strong {
+    font-size: 0.95rem;
+    color: #0f172a;
+    display: block;
+}
+
+.stat-pill-item span {
+    font-size: 0.78rem;
+    color: #64748b;
+}
+
+/* Dealership Box Styling */
+.dealership-luxury-card {
+    background: linear-gradient(135deg, #f4f8ff 0%, #edf4ff 100%);
+    border: 1px solid #d0e2ff;
+    border-radius: 20px;
+    padding: 26px 28px;
+    color: #0f172a;
+    box-shadow: 0 10px 30px rgba(53, 53, 152, 0.06);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.dealership-luxury-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 120px;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(53, 53, 152, 0.04));
+    transform: skewX(-20deg);
+}
+
+.dealership-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid rgba(53, 53, 152, 0.15);
+    padding-bottom: 12px;
+}
+
+.dealership-header h6 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #353598;
+    letter-spacing: 0.5px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.dealership-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.dealership-chip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    border: 1px solid #d0e2ff;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 0.88rem;
+    box-shadow: 0 4px 12px rgba(53, 53, 152, 0.04);
+    transition: all 0.3s ease;
+}
+
+.dealership-chip:hover {
+    background: #ffffff;
+    border-color: #353598;
+    box-shadow: 0 8px 20px rgba(53, 53, 152, 0.12);
+    transform: translateX(4px);
+}
+
+.dealership-chip-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.dealership-chip-left i {
+    color: #353598;
+    font-size: 0.95rem;
+}
+
+.dealership-chip-left strong {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+.dealership-chip-right {
+    font-size: 0.8rem;
+    color: #353598;
+    background: rgba(53, 53, 152, 0.08);
+    font-weight: 600;
+    padding: 3px 12px;
+    border-radius: 14px;
+}
+
+@media (max-width: 576px) {
+    .expertise-section-card {
+        padding: 28px 20px;
+        border-radius: 20px;
+    }
+
+    .expertise-card-title {
+        font-size: 1.7rem;
+    }
+}

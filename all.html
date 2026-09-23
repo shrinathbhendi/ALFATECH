@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>All Categories - Alfa Tech India | Dairy Equipment Since 1990s</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@500;600;700&family=Inter:wght@400;600;700;800&family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet"> <!-- Keep all fonts for now, script.js will handle the actual usage -->
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/all.css">
+    <link rel="icon" href="assets/images.png/logo.png" type="image/png">
+</head>
+<body>
+<div class="top-header-section"></div>
+
+<!-- ========== NO HERO SECTION - DIRECT PRODUCTS ========== -->
+<section class="all-categories-section" style="padding-top: 60px;">
+    <div class="container">
+        <!-- Search Bar Section -->
+        <div class="text-center mb-4" data-aos="fade-up">
+            <h2 class="section-title">Explore Our Range</h2>
+            <p class="text-muted">Quickly find the dairy machine you need from our extensive collection</p>
+        </div>
+        <div class="search-wrapper mb-5" data-aos="fade-up">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="productSearchInput" placeholder="Search for machines (e.g. Milking machine, Khoya, Paneer...)" autocomplete="off">
+                <button id="clearSearch" class="clear-btn" style="display: none;"><i class="fas fa-times"></i></button>
+            </div>
+        </div>
+
+        <div class="categories-grid" id="categoriesGrid">
+            <!-- Categories will be loaded dynamically via all.js -->
+        </div>
+    </div>
+</section>
+<!-- Shared Footer and Floating Buttons will be loaded via script.js -->
+<footer class="main-footer"></footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="assets/js/script.js"></script>
+<script src="assets/js/all.js"></script>
+</body>
+</html>
+

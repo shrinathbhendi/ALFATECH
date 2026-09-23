@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Alfa Tech India | Premium Dairy Equipment Since 1990s</title>
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images.png/logo.png" type="image/png">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@500;600;700&family=Inter:wght@400;600;700;800&family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap"
+        rel="stylesheet"> <!-- Keep all fonts for now, script.js will handle the actual usage -->
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Clean, Bright Hero Section with Zero Black Opacity/Filters */
+        .hero-section-main {
+            position: relative;
+            overflow: hidden;
+            background-color: #f8fafc;
+        }
+
+        .hero-bg-slideshow {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            overflow: hidden;
+        }
+
+        .hero-slider-track {
+            display: flex;
+            height: 100%;
+            will-change: transform;
+        }
+
+        /* 100% Clean, Natural, Pure Images - No Black Opacity, No Dark Filters */
+        .hero-slide {
+            position: relative;
+            height: 100%;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            opacity: 1;
+            filter: none !important;
+            -webkit-filter: none !important;
+        }
+
+        /* Completely remove black overlay */
+        .hero-overlay {
+            display: none !important;
+            background: none !important;
+        }
+
+        /* 100% Clean, Transparent Hero Content - No Boxes, No Cards, No Blocking */
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 650px;
+            background: transparent !important;
+            box-shadow: none !important;
+            border: none !important;
+            backdrop-filter: none !important;
+            -webkit-backdrop-filter: none !important;
+            padding: 80px 0 60px 0;
+            margin: 0;
+        }
+
+        /* Clean Pre-Title Pill */
+        .hero-pre-title {
+            color: #ffffff !important;
+            background: #353598 !important;
+            font-weight: 700;
+            font-size: 0.76rem !important;
+            letter-spacing: 2px !important;
+            padding: 0.4rem 1.2rem !important;
+            border-radius: 50px;
+            display: inline-block;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+            margin-bottom: 1.1rem !important;
+            text-shadow: none !important;
+        }
+
+        /* Clean Hero Title - Clear, Crisp Text Directly on Clear Image */
+        .hero-main-title {
+            color: #ffffff !important;
+            font-family: 'Outfit', 'Montserrat', sans-serif !important;
+            font-size: 2.9rem !important;
+            font-weight: 800 !important;
+            letter-spacing: -0.5px !important;
+            line-height: 1.18 !important;
+            margin-bottom: 1.1rem !important;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8), 0 1px 3px rgba(0, 0, 0, 0.95) !important;
+        }
+
+        .hero-main-title span {
+            color: #60a5fa !important;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8) !important;
+        }
+
+        /* Clean Description Text */
+        .hero-main-description {
+            color: #ffffff !important;
+            font-size: 1.02rem !important;
+            font-weight: 500 !important;
+            line-height: 1.65;
+            margin-bottom: 2rem !important;
+            text-shadow: 0 1px 6px rgba(0, 0, 0, 0.85), 0 2px 12px rgba(0, 0, 0, 0.7) !important;
+            max-width: 560px;
+        }
+
+        /* Buttons Group */
+        .btn-hero-primary {
+            background: #353598 !important;
+            color: #ffffff !important;
+            border-radius: 8px !important;
+            padding: 0.85rem 2rem !important;
+            font-weight: 700 !important;
+            font-size: 0.95rem !important;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4) !important;
+            transition: all 0.25s ease !important;
+            text-decoration: none !important;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-hero-primary:hover {
+            background: #272775 !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5) !important;
+        }
+
+        .btn-hero-outline {
+            background: rgba(255, 255, 255, 0.15) !important;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 2px solid #ffffff !important;
+            color: #ffffff !important;
+            border-radius: 8px !important;
+            padding: 0.82rem 2rem !important;
+            font-weight: 700 !important;
+            font-size: 0.95rem !important;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25) !important;
+            transition: all 0.25s ease !important;
+            text-decoration: none !important;
+        }
+
+        .btn-hero-outline:hover {
+            background: #ffffff !important;
+            color: #353598 !important;
+            transform: translateY(-2px) !important;
+        }
+
+        /* Clean Slider Navigation Arrows */
+        .hero-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 48px;
+            height: 48px;
+            background: #ffffff;
+            border: 1.5px solid #cbd5e1;
+            color: #1e293b;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.15rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.25s ease;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+        }
+
+        .hero-arrow:hover {
+            background: #353598;
+            color: #ffffff;
+            border-color: #353598;
+            transform: translateY(-50%) scale(1.1);
+            box-shadow: 0 6px 20px rgba(53, 53, 152, 0.35);
+        }
+
+        .hero-arrow-prev {
+            left: 25px;
+        }
+
+        .hero-arrow-next {
+            right: 25px;
+        }
+
+        /* Slider Navigation Dots */
+        .hero-dots {
+            position: absolute;
+            bottom: 25px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .hero-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #ffffff;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1.5px solid #cbd5e1;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero-dot.active {
+            background: #353598;
+            width: 32px;
+            border-radius: 10px;
+            border-color: #353598;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                padding: 24px 20px;
+                margin: 25px 12px;
+                border-radius: 14px;
+            }
+
+            .hero-main-title {
+                font-size: 2rem !important;
+            }
+
+            .hero-arrow-prev {
+                left: 10px;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+
+            .hero-arrow-next {
+                right: 10px;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <link rel="icon" href="assets/images.png/logo.png" type="image/png">
+</head>
+
+<body>
+
+    <!-- ========== MAIN HEADER WITH LOGO ========== -->
+    <div class="top-header-section">
+        <div class="container">
+            <div class="header-container">
+                <div class="logo-area">
+                    <img src="assets/images.png/watemark orginal alfa logo.png" alt="Alfa Tech India" class="logo-img"
+                        onerror="this.src='https://placehold.co/400x400/0a66c2/white?text=ALFA'">
+                    <div class="brand-text">
+                        <h1>ALFA TECH INDIA</h1>
+                        <p>No 1 Manufacturer In Milking Machine And Dairy Product Equipments</p>
+                    </div>
+                </div>
+                <div class="hamburger-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero-section-main" style="min-height: 600px;">
+        <!-- Background Horizontal Track Slideshow -->
+        <div class="hero-bg-slideshow">
+            <div class="hero-slider-track" id="heroTrack">
+                <div class="hero-slide" style="background-image: url('assets/images.png/Newplant4.png');"></div>
+                <div class="hero-slide" style="background-image: url('assets/images.png/Newplant1.png');"></div>
+                <div class="hero-slide" style="background-image: url('assets/images.png/Newplant2.png');"></div>
+                <div class="hero-slide" style="background-image: url('assets/images.png/Newplant3.png');"></div>
+            </div>
+        </div>
+        <div class="hero-overlay"></div>
+
+        <!-- Navigation Arrows for Manual Sliding -->
+        <button class="hero-arrow hero-arrow-prev" id="heroPrevBtn" aria-label="Previous Slide"><i
+                class="fas fa-chevron-left"></i></button>
+        <button class="hero-arrow hero-arrow-next" id="heroNextBtn" aria-label="Next Slide"><i
+                class="fas fa-chevron-right"></i></button>
+
+        <!-- Navigation Dots -->
+        <div class="hero-dots" id="heroDots">
+            <span class="hero-dot active" data-slide="0"></span>
+            <span class="hero-dot" data-slide="1"></span>
+            <span class="hero-dot" data-slide="2"></span>
+            <span class="hero-dot" data-slide="3"></span>
+        </div>
+
+        <div class="container">
+            <div class="hero-content" data-aos="fade-up">
+                <span class="hero-pre-title">MILKING &amp; DAIRY EQUIPMENT MANUFACTURER</span>
+                <h1 class="hero-main-title">Powering India's <span>Dairy Future</span> Since 1990s</h1>
+                <p class="hero-main-description">
+                    Alfa Tech India designs and manufactures world-class milking machines, milk analysers, cream
+                    separators,
+                    khoja machines and complete dairy processing equipment.
+                </p>
+                <div class="hero-buttons-group">
+                    <a href="products.html" class="btn-hero-primary">Explore Products &rarr;</a>
+                    <a href="contact.html" class="btn-hero-outline">Get a Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== STATS STRIP ========== -->
+    <section style="background: #353598; padding: 28px 0;">
+        <div class="container">
+            <div class="row g-0 text-center text-white">
+                <div class="col-6 col-md-3" style="border-right: 1px solid rgba(255,255,255,0.2);">
+                    <div class="py-2">
+                        <div style="font-size: 1.9rem; font-weight: 800; line-height: 1;">30+</div>
+                        <div style="font-size: 0.78rem; opacity: 0.85; margin-top: 4px; letter-spacing: 1px;">YEARS
+                            EXPERIENCE</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" style="border-right: 1px solid rgba(255,255,255,0.2);">
+                    <div class="py-2">
+                        <div style="font-size: 1.9rem; font-weight: 800; line-height: 1;">100K+</div>
+                        <div style="font-size: 0.78rem; opacity: 0.85; margin-top: 4px; letter-spacing: 1px;">SATISFIED
+                            CUSTOMERS</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3" style="border-right: 1px solid rgba(255,255,255,0.2);">
+                    <div class="py-2">
+                        <div style="font-size: 1.9rem; font-weight: 800; line-height: 1;">50+</div>
+                        <div style="font-size: 0.78rem; opacity: 0.85; margin-top: 4px; letter-spacing: 1px;">PRODUCT
+                            MODELS</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="py-2">
+                        <div style="font-size: 1.9rem; font-weight: 800; line-height: 1;">PAN</div>
+                        <div style="font-size: 0.78rem; opacity: 0.85; margin-top: 4px; letter-spacing: 1px;">INDIA
+                            SERVICE NETWORK</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- ========== OUR PRODUCTS MARQUEE SHOWCASE ========== -->
+    <section class="product-overview-section py-5">
+        <div class="container-fluid px-0">
+            <div class="section-header text-center mb-4" data-aos="fade-up">
+                <h2 class="section-title" style="color: #353598 !important;">Our Products Range</h2>
+                <p class="section-subtitle" style="color: #64748b;">Explore our wide range of world-class dairy &amp; industrial equipment</p>
+            </div>
+            <div class="product-marquee-wrapper" data-aos="fade-up">
+                <div class="product-marquee-track" id="productMarqueeTrack">
+                    <!-- Cards populated dynamically via JavaScript in script.js -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SYSTEM LIFE FLOW ========== -->
+    <section class="py-5 system-architecture-section"
+        style="background: linear-gradient(135deg, #e0ecff 0%, #f4f8ff 45%, #e4effe 75%, #ffffff 100%); position: relative; overflow: hidden;">
+        <div class="container py-3">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="section-title" style="color: #353598 !important;">System Architecture</h2>
+                <p class="section-subtitle" style="color: #64748b;">Smart dairy automation, cloud connectivity &
+                    real-time management</p>
+            </div>
+
+
+
+            <!-- Row 2: Bulk Milk Cooler (image right) -->
+            <div class="row g-4 align-items-center" data-aos="fade-up">
+                <div class="col-lg-6 pe-lg-4 pb-3 pb-lg-0 order-2 order-lg-1">
+                    <span class="text-uppercase mb-2"
+                        style="background: rgba(53, 53, 152, 0.1); color: #353598; border: 1px solid rgba(53, 53, 152, 0.25); padding: 4px 14px; border-radius: 20px; display: inline-block; font-size: 0.75rem; letter-spacing: 2px; font-weight: 700;">System
+                        01</span>
+                    <h3 class="fw-bold mb-3 mt-2" style="color: #1e293b;">Alfa Bulk Milk Cooler Management</h3>
+                    <p class="mb-4" style="color: #475569; font-size: 0.95rem; line-height: 1.8;">Complete bulk milk
+                        quantity
+                        & temperature registration system. Data transfer via key & GSM/GPRS to central server, covering
+                        road tanker to farm cooling tank workflow.</p>
+                    <div class="row g-3">
+                        <div class="col-12 col-sm-6">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <i class="fas fa-check-circle" style="color: #353598; font-size: 0.9rem;"></i>
+                                <span style="color: #1e293b; font-size: 0.88rem; font-weight: 600;">Road Tanker
+                                    Integration</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <i class="fas fa-check-circle" style="color: #353598; font-size: 0.9rem;"></i>
+                                <span style="color: #1e293b; font-size: 0.88rem; font-weight: 600;">Flow Meter &
+                                    Pump</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2 mb-2 mb-sm-0">
+                                <i class="fas fa-check-circle" style="color: #353598; font-size: 0.9rem;"></i>
+                                <span style="color: #1e293b; font-size: 0.88rem; font-weight: 600;">Air CIP &
+                                    Filter</span>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6">
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <i class="fas fa-check-circle" style="color: #353598; font-size: 0.9rem;"></i>
+                                <span style="color: #1e293b; font-size: 0.88rem; font-weight: 600;">Farm Cooling
+                                    Tank</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2 mb-2">
+                                <i class="fas fa-check-circle" style="color: #353598; font-size: 0.9rem;"></i>
+                                <span style="color: #1e293b; font-size: 0.88rem; font-weight: 600;">ALFA BC & Data
+                                    Key</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="fas fa-check-circle" style="color: #353598; font-size: 0.9rem;"></i>
+                                <span style="color: #1e293b; font-size: 0.88rem; font-weight: 600;">GSM/GPRS
+                                    Server</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2 text-center">
+                    <img src="assets/images.png/pdf_p6_img3_nobg.png" alt="Alfa Bulk Milk Cooler System"
+                        class="img-fluid w-100"
+                        style="object-fit: contain; max-height: 520px; filter: drop-shadow(0 12px 25px rgba(53,53,152,0.15));">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== WHY CHOOSE US INFOGRAPHIC ========== -->
+    <section class="why-choose-us-section">
+        <div class="container">
+            <div class="text-center mb-2" data-aos="fade-up">
+                <h2 class="section-title">Why Choose Us</h2>
+                <p class="section-subtitle">A brand of quality, trust and consistent innovation in dairy engineering
+                    since 1990</p>
+            </div>
+
+            <!-- Infographic Radial Diagram -->
+            <div class="why-choose-infographic-container" data-aos="fade-up">
+
+                <!-- Central Circle Node -->
+                <div class="center-infographic-node">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Why Choose<br>Alfa Tech</h3>
+                </div>
+
+                <!-- Node 1: Top Left -->
+                <div class="info-node info-node-1">
+                    <div class="info-node-text text-end">
+                        <h4>30+ Years Experience</h4>
+                        <p>Trusted brand in dairy & agriculture machinery since 1990.</p>
+                    </div>
+                    <div class="node-circle-badge">
+                        <div class="dashed-outer-ring"></div>
+                        <span class="node-number-pill">1</span>
+                        <div class="node-gradient-circle grad-node-1">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Node 2: Middle Left -->
+                <div class="info-node info-node-2">
+                    <div class="info-node-text text-end">
+                        <h4>In-House Manufacturing</h4>
+                        <p>Fully manufactured at our Pune facility with quality checks.</p>
+                    </div>
+                    <div class="node-circle-badge">
+                        <div class="dashed-outer-ring"></div>
+                        <span class="node-number-pill">2</span>
+                        <div class="node-gradient-circle grad-node-2">
+                            <i class="fas fa-industry"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Node 3: Bottom Center -->
+                <div class="info-node info-node-3">
+                    <div class="node-circle-badge">
+                        <div class="dashed-outer-ring"></div>
+                        <span class="node-number-pill">3</span>
+                        <div class="node-gradient-circle grad-node-3">
+                            <i class="fas fa-award"></i>
+                        </div>
+                    </div>
+                    <div class="info-node-text text-center">
+                        <h4>Quality Assured</h4>
+                        <p>Tested on every parameter before dispatch. NDDB Approved.</p>
+                    </div>
+                </div>
+
+                <!-- Node 4: Middle Right -->
+                <div class="info-node info-node-4">
+                    <div class="node-circle-badge">
+                        <div class="dashed-outer-ring"></div>
+                        <span class="node-number-pill">4</span>
+                        <div class="node-gradient-circle grad-node-4">
+                            <i class="fas fa-truck"></i>
+                        </div>
+                    </div>
+                    <div class="info-node-text text-start">
+                        <h4>Pan-India Delivery</h4>
+                        <p>Reliable shipping across all Indian states with 10+ offices.</p>
+                    </div>
+                </div>
+
+                <!-- Node 5: Top Right -->
+                <div class="info-node info-node-5">
+                    <div class="node-circle-badge">
+                        <div class="dashed-outer-ring"></div>
+                        <span class="node-number-pill">5</span>
+                        <div class="node-gradient-circle grad-node-5">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                    </div>
+                    <div class="info-node-text text-start">
+                        <h4>After-Sales Support</h4>
+                        <p>Dedicated service team & spare parts network across India.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom CTA Button & Extra Info -->
+            <div class="text-center mt-5 pt-3" data-aos="fade-up">
+                <p class="text-muted mb-3" style="font-size: 0.9rem;">
+                    <i class="fas fa-chalkboard-user me-2" style="color: #353598;"></i>
+                    <strong>Expert Guidance:</strong> Talk to dairy specialists before buying &mdash; free consultation
+                    available.
+                </p>
+                <a href="about.html" class="btn px-4 py-2 fw-bold text-white shadow-sm"
+                    style="background: #353598; border-radius: 25px; font-size: 0.9rem;">Learn More About Us &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="footer-logo">
+                        <img src="assets/images.png/logo.png" alt="Alfa Tech India"
+                            style="width: 50px; height: 50px; object-fit: contain; border-radius: 10px;">
+                        <h3>ALFA TECH INDIA</h3>
+                    </div>
+                    <p class="footer-desc">Manufacturer of milking machines and complete dairy equipment with 30+ years
+                        of expertise.</p>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=100009574982786" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/alfatechindia/" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/user/Alfatechindia" target="_blank" rel="noopener" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 col-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Our Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="videos.html">Videos</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 col-6 mb-4">
+                    <h5>Products</h5>
+                    <ul class="footer-links">
+                        <li><a href="product-double-bucket.html">Milking Machines</a></li>
+                        <li><a href="product-milk-analyser.html">Milk Analysers</a></li>
+                        <li><a href="product-cream-separator.html">Cream Separators</a></li>
+                        <li><a href="product-khoya-machine.html">Khoya / Mawa Machines</a></li>
+                        <li><a href="product-paneer-machine.html">Paneer Press</a></li>
+                        <li><a href="product-bulk-cooler.html">Bulk Milk Coolers</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4">
+                    <h5>Contact</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> 1717, Zenith Complex 4th Floor, Opp Krushi Bhavan,
+                            Shivajinagar, Pune-411005,</li>
+                        <li><i class="fas fa-phone"></i> 9822020999 / 9822871132 / 9850584191</li>
+                        <li><i class="fas fa-envelope"></i> Customer_Care@alfatechindia.com / sales@alfatechindia.com /
+                            alfatechindia@gmail.com</li>
+                        <li><i class="fas fa-user-tie"></i> <span><strong>M Bhandarkar</strong> - Sales Manager</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Alfa Tech India. All Rights Reserved. Dairy Equipment Since 1990s. | Developed by <a
+                        href="https://mindaxisinnovation.com/" target="_blank" rel="noopener"
+                        style="color: #b0c4de; text-decoration: none;">MindAxis Innovation Pvt Ltd</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Buttons -->
+    <a href="https://wa.me/919822020999?text=Hello%2C%20I%20need%20expert%20advice%20for%20dairy%20equipment"
+        class="floating-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+    <a href="#" id="backToTopBtn" class="back-top-btn"><i class="fas fa-arrow-up"></i></a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+
+</html>

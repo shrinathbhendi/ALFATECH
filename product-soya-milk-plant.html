@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Soya Milk Production Plant | Alfa Tech India</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/product-detail.css">
+    <style>
+        .soya-header-badge {
+            background: linear-gradient(135deg, #1b5e20, #4caf50);
+            color: #fff;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 12px;
+        }
+        .section-heading {
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            color: #0d2b45;
+            margin-bottom: 25px;
+        }
+        .section-heading::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #1e40af;
+            margin-top: 8px;
+            border-radius: 2px;
+        }
+        .info-card {
+            background: #f8fdf9;
+            border-left: 5px solid #1e40af;
+            padding: 24px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        }
+        .machine-grid-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+        .machine-grid-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(46, 125, 50, 0.15);
+            border-color: #1e40af;
+        }
+        .machine-card-img-wrapper {
+            width: 100%;
+            height: 220px;
+            background: #fcfdfe;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            border-bottom: 1px solid #f0f4f8;
+        }
+        .machine-card-img-wrapper img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+            border-radius: 6px;
+        }
+        .machine-card-body {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .machine-number-tag {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: #1e40af;
+            background: #e8f5e9;
+            padding: 4px 12px;
+            border-radius: 12px;
+            display: inline-block;
+            margin-bottom: 10px;
+            width: fit-content;
+        }
+        .machine-card-title {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 10px;
+        }
+        .machine-card-desc {
+            font-size: 0.92rem;
+            color: #475569;
+            line-height: 1.6;
+        }
+        .cost-table-container {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            border: 1px solid #cbd5e1;
+        }
+        .cost-table thead {
+            background: #0f172a;
+            color: #ffffff;
+        }
+        .cost-table th, .cost-table td {
+            padding: 14px 18px;
+            vertical-align: middle;
+        }
+        .cost-table tbody tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+        .cost-table tbody tr:hover {
+            background-color: #f0fdf4;
+        }
+        .cost-total-row {
+            background: #dcfce7 !important;
+            font-weight: 800;
+            color: #14532d;
+            font-size: 1.1rem;
+        }
+        .raw-mat-chip {
+            background: #ffffff;
+            border: 2px solid #1e40af;
+            border-radius: 30px;
+            padding: 12px 24px;
+            font-weight: 700;
+            color: #1b5e20;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            margin: 8px;
+            box-shadow: 0 4px 12px rgba(46,125,50,0.08);
+            transition: transform 0.2s;
+        }
+        .raw-mat-chip:hover {
+            transform: scale(1.04);
+            background: #f0fdf4;
+        }
+        .process-diagram-img {
+            max-width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid #e2e8f0;
+        }
+    </style>
+    <link rel="icon" href="assets/images.png/logo.png" type="image/png">
+</head>
+<body>
+
+<div class="top-header-section">
+    <div class="container">
+        <div class="header-container">
+            <div class="logo-area">
+                <img src="assets/images.png/watemark orginal alfa logo.png" alt="Alfa Tech India" class="logo-img" onerror="this.src='https://placehold.co/400x400/0a66c2/white?text=ALFA'">
+                <div class="brand-text">
+                    <h1>ALFA TECH INDIA</h1>
+                    <p>DAIRY & FOOD PROCESSING EQUIPMENT SINCE 1990s</p>
+                </div>
+            </div>
+            <div class="navbar-menu">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Our Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="videos.html">Videos</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<section class="product-detail-section py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right">
+                <img id="mainProductImage" src="assets/images.png/photo11.png" alt="Industrial Soya Milk Plant" class="main-product-img rounded shadow-lg img-fluid" onerror="this.src='assets/images.png/photo4.png'">
+                <div class="thumbnail-row mt-3 d-flex gap-2 flex-wrap">
+                    <div class="thumbnail-wrapper">
+                        <img src="assets/images.png/photo11.png" class="thumbnail-img active" alt="Soya Milk Plant" data-image="assets/images.png/photo11.png">
+                    </div>
+                    <div class="thumbnail-wrapper">
+                        <img src="assets/images.png/photo4.png" class="thumbnail-img" alt="Dry Bean Tank" data-image="assets/images.png/photo4.png">
+                    </div>
+                    <div class="thumbnail-wrapper">
+                        <img src="assets/images.png/photo5.png" class="thumbnail-img" alt="Soya Bean Transferring Machine" data-image="assets/images.png/photo5.png">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-left">
+                <span class="soya-header-badge"><i class="fas fa-industry me-1"></i> Industrial Soya Processing</span>
+                <h1 class="product-title display-6 fw-bold text-dark">Industrial Soya Milk Production Plant</h1>
+                
+                <div class="price-section bg-light p-3 rounded mb-3 d-flex align-items-center gap-3">
+                    <span class="price-label fw-bold">Price:</span>
+                    <span class="price-value text-primary fs-4 fw-bold">Inquiry for Best Price</span>
+                </div>
+
+                <div class="brochure-video-links mb-3">
+                    <a href="contact.html" class="brochure-link text-decoration-none fw-bold text-primary"><i class="fas fa-file-pdf text-danger me-1"></i> Download Plant Technical Specification Brochure</a>
+                </div>
+
+                <ul class="features-list list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> <strong>Capacity:</strong> 100 LPH to 500 LPH Continuous Output</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> <strong>Area Required:</strong> 250 sq.ft to 350 sq.ft Approx</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> <strong>Applications:</strong> Plain Soya Milk, Tofu (Soya Paneer), Flavored Soya Beverages</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> <strong>Process Flow:</strong> Cleaning, Soaking, Grinding, Filtration, Boiling, Homogenization</li>
+                </ul>
+
+                <p class="product-description text-secondary">
+                    Alfa Tech India is a pioneer manufacturer of Soya Milk Plants. Our comprehensive production line is engineered for high efficiency, hygiene, and maximum protein output.
+                </p>
+                
+                <div class="btn-group d-flex gap-3">
+                    <a href="contact.html" class="btn btn-primary btn-lg px-4 rounded-pill">Request a Quote &rarr;</a>
+                    <a href="product-soya-milk.html" class="btn btn-outline-primary btn-lg px-4 rounded-pill">View Complete Machine Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<footer class="main-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="footer-logo">
+                    <img src="assets/images.png/logo.png" alt="Alfa Tech India" style="width: 50px; height: 50px; object-fit: contain; border-radius: 10px;">
+                    <h3>ALFA TECH INDIA</h3>
+                </div>
+                <p class="footer-desc">Manufacturer of milking machines and complete dairy equipment with 30+ years of expertise.</p>
+            </div>
+            <div class="col-md-2 col-6 mb-4">
+                <h5>Quick Links</h5>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Our Products</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 col-6 mb-4">
+                <h5>Products</h5>
+                <ul class="footer-links">
+                    <li><a href="product-soya-milk.html">Soya Milk Plant</a></li>
+                    <li><a href="#">Milking Machines</a></li>
+                    <li><a href="#">Milk Analysers</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 mb-4">
+                <h5>Contact</h5>
+                <ul class="footer-contact">
+                    <li><i class="fas fa-map-marker-alt"></i> Shivajinagar, Pune - 411005</li>
+                    <li><i class="fas fa-phone"></i> 08047653483</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Alfa Tech India. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="assets/js/script.js"></script>
+<script>
+AOS.init({ duration: 800, once: true });
+</script>
+</body>
+</html>
