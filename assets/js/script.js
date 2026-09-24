@@ -408,10 +408,11 @@ const SHARED_FOOTER_HTML = `
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Alfa Tech India. All Rights Reserved. No 1 Manufacturer In Milking Machine And Dairy Product Equipments. | Developed by <a href="https://mindaxisinnovation.com/" target="_blank" rel="noopener" style="color: #b0c4de; text-decoration: none; transition: 0.2s;">MindAxis Innovation Pvt Ltd</a></p>
+            <p>&copy; 2025 Alfa Tech India. All Rights Reserved. No 1 Manufacturer In Milking Machine And Dairy Product Equipments. | Developed by <a href="https://mindaxisinnovation.com/" target="_blank" rel="noopener" style="color: #b0c4de; font-weight: bold; text-decoration: none; transition: 0.2s;"><b>MindAxis Innovation Pvt Ltd</b></a></p>
         </div>
     </div>
 </footer>
+<a href="tel:9822020999" class="floating-call" aria-label="Call Us"><i class="fas fa-phone-alt"></i></a>
 <a href="https://wa.me/919822020999?text=Hello%2C%20I%20need%20expert%20advice%20for%20dairy%20equipment" class="floating-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
 <a href="#" id="backToTopBtn" class="back-top-btn"><i class="fas fa-arrow-up"></i></a>`;
 
@@ -421,7 +422,7 @@ function syncSharedLayout() {
         header.outerHTML = SHARED_HEADER_HTML;
     }
 
-    document.querySelectorAll('.floating-wa, .back-top-btn').forEach(button => button.remove());
+    document.querySelectorAll('.floating-wa, .floating-call, .back-top-btn').forEach(button => button.remove());
     const footer = document.querySelector('.main-footer');
     if (footer) {
         footer.outerHTML = SHARED_FOOTER_HTML;
