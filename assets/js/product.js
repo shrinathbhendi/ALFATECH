@@ -404,6 +404,22 @@
                 desc: 'Mobile 25L SS single bucket trolley milking machine with 1HP motor, 200 LPM vacuum pump, 20ft hose, works on electricity & inverter.',
                 link: 'product-trolly-milking.html'
             },
+            {
+                name: 'Transparent Milking Machine Claw (350cc)',
+                categorySlug: 'milking-parlour-system',
+                categoryName: 'Milking Machine',
+                image: 'assets/images.png/photo0011.png',
+                desc: 'High-capacity 350cc transparent acrylic milking claw with stainless steel base plate, shut-off valve, heavy-duty silicone seal ring & multi-port milk tubings.',
+                link: 'product-milking-claw.html'
+            },
+            {
+                name: 'Pneumatic Milking Pulsator (60/40 Ratio)',
+                categorySlug: 'milking-parlour-system',
+                categoryName: 'Milking Machine',
+                image: 'assets/images.png/photo0022.png',
+                desc: 'Oil-free dry pneumatic milking pulsator with 60/40 pulsation ratio, stainless steel 304 top cover, dual outlets, and adjustable pulsation speed.',
+                link: 'product-milking-pulsator.html'
+            },
             // Category: Pouch Packing Machine
             {
                 name: 'Semi-Automatic Pouch Packing Machine',

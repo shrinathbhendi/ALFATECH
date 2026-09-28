@@ -16,6 +16,8 @@ const categoriesWithProducts = [
             { name: 'Alfa Tech India Double Bucket Milking Machine with Engine', price: '₹ 69,000', image: 'assets/images.png/photo18.png', link: 'product-double-bucket-engine.html' },
             { name: 'Alfa Tech Trolly Milking Machine', price: '₹ 33,000', image: 'assets/images.png/photo20.png', link: 'product-trolly-milking.html' },
             { name: 'Milking Machine Four Bucket', price: 'Inquiry', image: 'assets/images.png/four2.png', link: 'product-four-bucket.html' },
+            { name: 'Transparent Milking Machine Claw (350cc)', price: '₹ 1,800', image: 'assets/images.png/photo0011.png', link: 'product-milking-claw.html' },
+            { name: 'Pneumatic Milking Pulsator (60/40 Ratio)', price: '₹ 2,500', image: 'assets/images.png/photo0022.png', link: 'product-milking-pulsator.html' },
             { name: 'Milking Machine Parts', price: '₹ 1,200', image: 'assets/images.png/machinepart2.png', link: 'product-milking-parts.html' }
         ]
     },
@@ -712,6 +714,7 @@ function initProductOverview() {
         { title: 'Australia Site Plant', desc: 'Turnkey industrial dairy processing setup commissioned globally.', image: 'assets/images.png/Newplant.png', link: 'product-plant.html' },
         { title: 'Bulk Milk Coolers', desc: 'Industrial grade coolers to maintain milk freshness.', image: 'assets/images.png/Bulk-milk-0coolers1.png', link: 'product-bulk-cooler.html' },
         { title: '1000 LPH Cream Separator', desc: 'Centrifugal online separators for optimal fat recovery.', image: 'assets/images.png/Online-Cream-Separator-1000LPH.png', link: 'product-cream-separator.html' },
+        { title: 'Transparent Milking Machine Claw', desc: '350cc high capacity transparent acrylic milking claw with SS base plate & shut-off valve.', image: 'assets/images.png/photo0011.png', link: 'product-milking-claw.html' },
         { title: 'Milking Machines', desc: 'High-quality milking machines for efficient dairy farming.', image: 'assets/withoutengin.png', link: 'product-double-bucket.html' },
         { title: 'Solid Fuel Steam Boiler', desc: 'High efficiency wood and coal fired steam boiler.', image: 'assets/images.png/Gheeplant-2.png', link: 'product-steam-boiler-solid.html' }
     ];
@@ -724,6 +727,7 @@ function initProductOverview() {
         { title: 'Milk Processing Plant', desc: 'Complete commercial milk processing plant with pasteurizer.', image: 'assets/images.png/Newplant1.png', link: 'product-milk-processing-plant.html' },
         { title: 'Continuous Band Sealer', desc: 'High-speed horizontal continuous sealing for pouch packaging.', image: 'assets/images.png/continuous-band-sealing-machine.png', link: 'sealing-machine.html' },
         { title: 'Cup Sealer Machine', desc: 'Hygienic sealing for curd, yogurt and lassi cups.', image: 'assets/images.png/new6.png', link: 'product-rotary-cup-sealing.html' },
+        { title: 'Pneumatic Milking Pulsator', desc: 'Dry oil-free 60/40 ratio pneumatic pulsator with SS 304 cap.', image: 'assets/images.png/photo0022.png', link: 'product-milking-pulsator.html' },
         { title: 'Pouch Packing Machine', desc: 'Automatic solutions for volumetric filling and sealing in pouches.', image: 'assets/punch.png', link: 'product-pouch-auto.html' },
         { title: 'Tabletop Vacuum Packaging', desc: 'Single chamber tabletop vacuum machine for paneer & mawa.', image: 'assets/images.png/vaccum2.png', link: 'product-tabletop-vacuum.html' },
         { title: 'Double Chamber Vacuum Machine', desc: 'Heavy duty SS 304 dual chamber high-speed vacuum packaging.', image: 'assets/images.png/producat1.png', link: 'product-double-chamber.html' },
