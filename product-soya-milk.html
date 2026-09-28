@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Soya Milk Production Line & Plant | Alfa Tech India</title>
+    <title>Automatic Soya Milk Production Plant & Machinery Line | Alfa Tech India</title>
+    <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@500;600;700&family=Inter:wght@400;600;700;800&family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- AOS Animation -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/product-detail.css">
     <style>
@@ -35,13 +40,13 @@
             display: block;
             width: 60px;
             height: 4px;
-            background: #1e40af;
+            background: #15803d;
             margin-top: 8px;
             border-radius: 2px;
         }
         .info-card {
             background: #f8fdf9;
-            border-left: 5px solid #1e40af;
+            border-left: 5px solid #15803d;
             padding: 24px;
             border-radius: 10px;
             margin-bottom: 25px;
@@ -61,7 +66,7 @@
         .machine-grid-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 12px 30px rgba(46, 125, 50, 0.15);
-            border-color: #1e40af;
+            border-color: #15803d;
         }
         .machine-card-img-wrapper {
             width: 100%;
@@ -88,7 +93,7 @@
         .machine-number-tag {
             font-size: 0.8rem;
             font-weight: 800;
-            color: #1e40af;
+            color: #15803d;
             background: #e8f5e9;
             padding: 4px 12px;
             border-radius: 12px;
@@ -114,7 +119,7 @@
             border: 1px solid #cbd5e1;
         }
         .cost-table thead {
-            background: #0f172a;
+            background: #14532d;
             color: #ffffff;
         }
         .cost-table th, .cost-table td {
@@ -135,7 +140,7 @@
         }
         .raw-mat-chip {
             background: #ffffff;
-            border: 2px solid #1e40af;
+            border: 2px solid #15803d;
             border-radius: 30px;
             padding: 12px 24px;
             font-weight: 700;
@@ -151,17 +156,34 @@
             transform: scale(1.04);
             background: #f0fdf4;
         }
-        .process-diagram-img {
-            max-width: 100%;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        .process-flow-step {
+            background: #ffffff;
             border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 16px 20px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+        }
+        .process-flow-step .step-number {
+            background: #15803d;
+            color: #fff;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 10px auto;
+            font-weight: 800;
+            font-size: 0.9rem;
         }
     </style>
     <link rel="icon" href="assets/images.png/logo.png" type="image/png">
 </head>
 <body>
 
+<!-- Header -->
 <div class="top-header-section">
     <div class="container">
         <div class="header-container">
@@ -189,20 +211,34 @@
 <section class="product-detail-section py-5">
     <div class="container">
         <div class="row align-items-center">
+            <!-- Left Image Gallery -->
             <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right">
-                <img id="mainProductImage" src="assets/images.png/photo11.png" alt="Soya Milk Machine Plant" class="main-product-img rounded shadow-lg img-fluid" onerror="this.src='assets/images.png/photo4.png'">
+                <img id="mainProductImage" src="assets/images.png/soya11.png" alt="Automatic Soya Milk Production Plant" class="main-product-img rounded shadow-lg img-fluid" onerror="this.src='assets/images.png/soya10.png'">
+                
+                <!-- Thumbnails with soya11.png and soya10.png preserved & added -->
                 <div class="thumbnail-row mt-3 d-flex gap-2 flex-wrap">
                     <div class="thumbnail-wrapper">
-                        <img src="assets/images.png/photo11.png" class="thumbnail-img active" alt="Soya Milk Plant" data-image="assets/images.png/photo11.png">
+                        <img src="assets/images.png/soya11.png" class="thumbnail-img active" alt="Soya Milk Plant Machine Line" data-image="assets/images.png/soya11.png">
                     </div>
                     <div class="thumbnail-wrapper">
-                        <img src="assets/images.png/photo4.png" class="thumbnail-img" alt="Dry Bean Tank" data-image="assets/images.png/photo4.png">
+                        <img src="assets/images.png/soya10.png" class="thumbnail-img" alt="Soya Plant Component" data-image="assets/images.png/soya10.png">
+                    </div>
+                    <div class="thumbnail-wrapper">
+                        <img src="assets/images.png/photo11.png" class="thumbnail-img" alt="Turnkey Plant" data-image="assets/images.png/photo11.png">
+                    </div>
+                    <div class="thumbnail-wrapper">
+                        <img src="assets/images.png/photo4.png" class="thumbnail-img" alt="Dry Bean Storage Tank" data-image="assets/images.png/photo4.png">
                     </div>
                     <div class="thumbnail-wrapper">
                         <img src="assets/images.png/photo5.png" class="thumbnail-img" alt="Soya Bean Transferring Machine" data-image="assets/images.png/photo5.png">
                     </div>
+                    <div class="thumbnail-wrapper">
+                        <img src="assets/images.png/soyamilk.png" class="thumbnail-img" alt="Soyamilk Machine" data-image="assets/images.png/soyamilk.png">
+                    </div>
                 </div>
             </div>
+
+            <!-- Right Info Card -->
             <div class="col-md-6" data-aos="fade-left">
                 <span class="soya-header-badge"><i class="fas fa-leaf me-1"></i> Plant-Based Dairy Solution</span>
                 <h1 class="product-title display-6 fw-bold text-dark">Automatic Soya Milk Production Plant & Machinery Line</h1>
@@ -210,28 +246,423 @@
                     Complete turnkey production line for extraction, cooking, filtration, homogenization, and aseptic packaging of high-protein Soya Milk, Tofu (Soya Paneer), and Soya Curd.
                 </p>
                 <ul class="features-list list-unstyled my-4">
-                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> <strong>High Extraction Yield:</strong> Premium quality cholesterol-free soya milk output</li>
-                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> <strong>Complete Automation:</strong> From raw bean soaking to pouch filling & sealing</li>
-                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> <strong>Food Grade Stainless Steel:</strong> SS 304 / SS 316 hygienic construction</li>
-                    <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> <strong>Versatile Applications:</strong> Plain soya milk, flavored drinks, Tofu & snacks</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>High Extraction Yield:</strong> Premium quality cholesterol-free soya milk output</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>Complete Automation:</strong> From raw bean soaking to pouch filling & sealing</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>Food Grade Stainless Steel:</strong> SS 304 / SS 316 hygienic construction</li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> <strong>Versatile Applications:</strong> Plain soya milk, flavored drinks, Tofu & snacks</li>
                 </ul>
                 <div class="price-section bg-light p-3 rounded mb-4 d-flex align-items-center gap-3">
-                    <span class="price-label fw-bold">Plant Cost / Quote:</span>
-                    <span class="price-value text-primary fs-4 fw-bold">Inquire for Direct Factory Price</span>
+                    <span class="price-label fw-bold">Plant Setup Investment:</span>
+                    <span class="price-value text-success fs-4 fw-bold">Inquire for Direct Factory Quotation</span>
                 </div>
                 <div class="btn-group d-flex gap-3">
-                    <a href="contact.html" class="btn btn-primary btn-lg px-4 rounded-pill">Request Custom Quote &rarr;</a>
-                    <a href="products.html" class="btn btn-outline-secondary btn-lg px-4 rounded-pill">&larr; All Products</a>
+                    <a href="contact.html" class="btn btn-success btn-lg px-4 rounded-pill fw-bold">Request Custom Quote &rarr;</a>
+                    <a href="products.html" class="btn btn-outline-secondary btn-lg px-4 rounded-pill">&larr; All Products</a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
+<!-- SECTION 1: ABOUT PRODUCT & MARKET OPPORTUNITY -->
+<section class="py-5 bg-light">
+    <div class="container" data-aos="fade-up">
+        <h2 class="section-heading">About Product & Market Potential</h2>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="info-card h-100">
+                    <h4 class="fw-bold text-dark mb-3"><i class="fas fa-seedling text-success me-2"></i> High-Protein Soya Milk Overview</h4>
+                    <p class="text-secondary" style="line-height: 1.7;">
+                        Soya Milk is an inexpensive and remarkably versatile high-protein food made from soya beans. It is a nutritious white liquid extracted from soybean seeds. Unlike animal dairy, soya milk is <strong>100% free from cholesterol and low in saturated fats</strong>.
+                    </p>
+                    <p class="text-secondary" style="line-height: 1.7;">
+                        The protein quality in soya milk is comparable to chicken protein while containing low calories. It serves as an excellent food for infants, children, elderly individuals, and lactating women due to its easily digestible vegetable protein.
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="info-card h-100" style="border-left-color: #2563eb; background: #f4f8ff;">
+                    <h4 class="fw-bold text-dark mb-3"><i class="fas fa-chart-line text-primary me-2"></i> Market Demand & Growth (20% Annual CAGR)</h4>
+                    <p class="text-secondary" style="line-height: 1.7;">
+                        With surging health consciousness, soya product acceptance is booming across India in forms like Tofu (soya paneer), Soya Curd, textured vegetable protein (soya nuggets), and fortified beverages.
+                    </p>
+                    <p class="text-secondary" style="line-height: 1.7;">
+                        As India is predominantly a vegetarian country, experts project the <strong>Soya Food Industry to grow over 20% annually</strong>. Derivatives like Tofu are extensively used in dishes (Matar Paneer, Palak Paneer), soya burgers, patties, sandwiches, and desserts.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
+<!-- SECTION 2: 12 BASIC MACHINERY REQUIREMENTS -->
+<section class="py-5">
+    <div class="container" data-aos="fade-up">
+        <h2 class="section-heading">Complete Machinery Requirement & Functionalities</h2>
+        <p class="text-muted mb-4">Our turnkey soya milk plant includes 12 specialized machines for seamless automated operation:</p>
+        
+        <div class="row g-4">
+            <!-- Machine 1 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="machine-grid-card">
+                    <div class="machine-card-img-wrapper">
+                        <img src="assets/images.png/photo4.png" alt="Dry Bean Tank">
+                    </div>
+                    <div class="machine-card-body">
+                        <span class="machine-number-tag">Machine 01</span>
+                        <h4 class="machine-card-title">Dry Bean Tank</h4>
+                        <p class="machine-card-desc">Class of storage equipment specifically designed for raw dry soybean raw material with small granule composition storage.</p>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Machine 2 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="machine-grid-card">
+                    <div class="machine-card-img-wrapper">
+                        <img src="assets/images.png/photo5.png" alt="Soyabean Transferring Machine">
+                    </div>
+                    <div class="machine-card-body">
+                        <span class="machine-number-tag">Machine 02</span>
+                        <h4 class="machine-card-title">Soya Bean Transferring Machine</h4>
+                        <p class="machine-card-desc">Pneumatic/conveyor machine used to transfer raw soybeans automatically into the Soaking & Washing machine.</p>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Machine 3 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="machine-grid-card">
+                    <div class="machine-card-img-wrapper">
+                        <img src="assets/images.png/soya_soaking_washing_machine.png" alt="Soybean Soaking & Washing Machine">
+                    </div>
+                    <div class="machine-card-body">
+                        <span class="machine-number-tag">Machine 03</span>
+                        <h4 class="machine-card-title">Soybean Soaking & Washing Machine</h4>
+                        <p class="machine-card-desc">Employs compressed air water injection to agitate and roll beans, separating floating bad beans & impurities via overflow discharge.</p>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Machine 4 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="machine-grid-card">
+                    <div class="machine-card-img-wrapper">
+                        <img src="assets/images.png/soya_grinding_separating_machine.png" alt="Grinding & Separating Machine">
+                    </div>
+                    <div class="machine-card-body">
+                        <span class="machine-number-tag">Machine 04</span>
+                        <h4 class="machine-card-title">Grinding and Separating Machine</h4>
+                        <p class="machine-card-desc">High-speed wet grinder to process soaked soybeans into soy milk while separating liquid extract from pulp.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Machine 5 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="machine-grid-card">
+                    <div class="machine-card-img-wrapper">
+                        <img src="assets/images.png/soya10.png" alt="Okara Transportation Machine">
+                    </div>
+                    <div class="machine-card-body">
+                        <span class="machine-number-tag">Machine 05</span>
+                        <h4 class="machine-card-title">Okara Transportation Machine</h4>
+                        <p class="machine-card-desc">Specialized screw/air discharge machine used after grinding to automatically transport and collect Okara (soya pulp residue).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Machine 6 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="machine-grid-card">
+                    <div class="machine-card-img-wrapper">
+                        <img src="assets/images.png/soya11.png" alt="Soymilk Cooking Machine">
+                    </div>
+                    <div class="machine-card-body">
+                        <span class="machine-number-tag">Machine 06</span>
+                        <h4 class="machine-card-title">Soymilk Cooking Kettle / Machine</h4>
+                        <p class="machine-card-desc">Digital time & temperature control panel for steam/electric cooking of soy milk, inactivating trypsin inhibitors and eliminating bean odor.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Machine 7 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="machine-grid-card">
+                    <div class="machine-card-img-wrapper">
+                        <img src="assets/images.png/photo11.png" alt="Soymilk Storage Tank">
+                    </div>
+                    <div class="machine-card-body">
+                        <span class="machine-number-tag">Machine 07</span>
+                        <h4 class="machine-card-title">Soymilk Storage Tank</h4>
+                        <p class="machine-card-desc">Insulated SS 304 buffer storage tank (1,000L - 10,000L capacity) for temporary storage and controlled feeding to downstream machines.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Machine 8 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="machine-grid-card">
+                    <div class="machine-card-img-wrapper">
+                        <img src="assets/images.png/soyamilk.png" alt="Sugar Dissolving Machine">
+                    </div>
+                    <div class="machine-card-body">
+                        <span class="machine-number-tag">Machine 08</span>
+                        <h4 class="machine-card-title">Sugar & Flavor Dissolving Tank</h4>
+                        <p class="machine-card-desc">High-shear agitator tank used to dissolve precise quantities of sugar, flavors, and vitamins into the soya milk.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Machine 9 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="machine-grid-card">
+                    <div class="machine-card-img-wrapper">
+                        <img src="assets/images.png/photo26.png" alt="Soya Milk Twin Filter Machine">
+                    </div>
+                    <div class="machine-card-body">
+                        <span class="machine-number-tag">Machine 09</span>
+                        <h4 class="machine-card-title">Soya Milk Twin Filter Machine</h4>
+                        <p class="machine-card-desc">Dual SS duplex filters that eliminate fine pulp particles, expanded boiled residues, and sugar lumps for smooth consistency.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Machine 10 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="machine-grid-card">
+                    <div class="machine-card-img-wrapper">
+                        <img src="assets/images.png/photo22.png" alt="Homogenizer">
+                    </div>
+                    <div class="machine-card-body">
+                        <span class="machine-number-tag">Machine 10</span>
+                        <h4 class="machine-card-title">High Pressure Homogenizer (300 LPH)</h4>
+                        <p class="machine-card-desc">Forces soy milk through micro-apertures at high velocity to reduce fat & protein globule size, preventing creaming or separation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Machine 11 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="machine-grid-card">
+                    <div class="machine-card-img-wrapper">
+                        <img src="assets/images.png/Newplant1.png" alt="Plate Heat Exchanger">
+                    </div>
+                    <div class="machine-card-body">
+                        <span class="machine-number-tag">Machine 11</span>
+                        <h4 class="machine-card-title">Soymilk Plate Heat Exchanger (PHE)</h4>
+                        <p class="machine-card-desc">Aseptic PHE pasteurization unit that destroys micro-bacteria, extending shelf life for Long Life Soya Milk & juices.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Machine 12 -->
+            <div class="col-md-6 col-lg-4">
+                <div class="machine-grid-card">
+                    <div class="machine-card-img-wrapper">
+                        <img src="assets/images.png/continuous-band-sealing-machine.png" alt="Soymilk Filling & Sealing Equipment">
+                    </div>
+                    <div class="machine-card-body">
+                        <span class="machine-number-tag">Machine 12</span>
+                        <h4 class="machine-card-title">Filling & Sealing Equipment (1500-2200 Pouch/Hr)</h4>
+                        <p class="machine-card-desc">Automatic pouch/bottle filling and hermetic sealing unit for quantitative packaging ready for market distribution.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 3: COST OF MACHINES TABLE -->
+<section class="py-5 bg-light">
+    <div class="container" data-aos="fade-up">
+        <h2 class="section-heading">Machinery Setup Cost Breakdown</h2>
+        <p class="text-muted mb-4">Estimated factory price breakdown for complete Soya Milk processing equipment:</p>
+        
+        <div class="cost-table-container">
+            <table class="table cost-table mb-0">
+                <thead>
+                    <tr>
+                        <th style="width: 80px;">S No.</th>
+                        <th>Machine Description</th>
+                        <th style="width: 100px;" class="text-center">Unit</th>
+                        <th style="width: 180px;" class="text-end">Estimated Price (₹)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>01</strong></td>
+                        <td>Soyabean Soaking and Washing Machine</td>
+                        <td class="text-center"><span class="badge bg-secondary">1</span></td>
+                        <td class="text-end fw-bold">₹ 2,00,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>02</strong></td>
+                        <td>Plate Heat Exchanger Pasteurizer</td>
+                        <td class="text-center"><span class="badge bg-secondary">1</span></td>
+                        <td class="text-end fw-bold">₹ 60,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>03</strong></td>
+                        <td>Homogenizer (Capacity: 300 Ltr/hr)</td>
+                        <td class="text-center"><span class="badge bg-secondary">1</span></td>
+                        <td class="text-end fw-bold">₹ 1,95,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>04</strong></td>
+                        <td>Soyabean Transferring Machine</td>
+                        <td class="text-center"><span class="badge bg-secondary">1</span></td>
+                        <td class="text-end fw-bold">₹ 1,75,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>05</strong></td>
+                        <td>Soyamilk Storage Tank (Capacity: 1000 - 10000 Ltr)</td>
+                        <td class="text-center"><span class="badge bg-secondary">1</span></td>
+                        <td class="text-end fw-bold">₹ 80,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>06</strong></td>
+                        <td>Sugar & Flavor Dissolving Machine</td>
+                        <td class="text-center"><span class="badge bg-secondary">1</span></td>
+                        <td class="text-end fw-bold">₹ 1,50,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>07</strong></td>
+                        <td>Soyamilk Filling and Sealing Equipment (1500 - 2200 Pouch/Hr)</td>
+                        <td class="text-center"><span class="badge bg-secondary">1</span></td>
+                        <td class="text-end fw-bold">₹ 1,50,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>08</strong></td>
+                        <td>Grinding and Separating Machine</td>
+                        <td class="text-center"><span class="badge bg-secondary">1</span></td>
+                        <td class="text-end fw-bold">₹ 1,00,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>09</strong></td>
+                        <td>Okara Transportation Machine</td>
+                        <td class="text-center"><span class="badge bg-secondary">1</span></td>
+                        <td class="text-end fw-bold">₹ 90,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>10</strong></td>
+                        <td>Soy Milk Cooking Machine</td>
+                        <td class="text-center"><span class="badge bg-secondary">1</span></td>
+                        <td class="text-end fw-bold">₹ 1,70,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>11</strong></td>
+                        <td>Soy Milk Twin Filter Machine</td>
+                        <td class="text-center"><span class="badge bg-secondary">1</span></td>
+                        <td class="text-end fw-bold">₹ 20,000</td>
+                    </tr>
+                    <tr>
+                        <td><strong>12</strong></td>
+                        <td>Other Machineries, Piping & Accessories</td>
+                        <td class="text-center"><span class="badge bg-secondary">Set</span></td>
+                        <td class="text-end fw-bold">₹ 40,000</td>
+                    </tr>
+                    <tr class="cost-total-row">
+                        <td colspan="3" class="text-uppercase text-end">Total Estimated Plant Machinery Cost:</td>
+                        <td class="text-end text-success fs-5">₹ 14,30,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION 4: RAW MATERIALS & MANUFACTURING PROCESS -->
+<section class="py-5">
+    <div class="container" data-aos="fade-up">
+        <h2 class="section-heading">Raw Material Requirements & Manufacturing Process</h2>
+        
+        <!-- Raw Material Component Chips -->
+        <div class="mb-5 text-center">
+            <h5 class="fw-bold text-dark mb-3">Basic Raw Material Components:</h5>
+            <div class="raw-mat-chip"><i class="fas fa-seedling text-success"></i> 1. Whole Soya Beans</div>
+            <div class="raw-mat-chip"><i class="fas fa-flask text-primary"></i> 2. Flavors, Color & Additives</div>
+            <div class="raw-mat-chip"><i class="fas fa-box text-warning"></i> 3. Milk Packaging Pouches / Bottles</div>
+            <div class="raw-mat-chip"><i class="fas fa-cube text-danger"></i> 4. Sugar & Sweeteners</div>
+        </div>
+
+        <!-- Detailed Manufacturing Steps -->
+        <div class="info-card">
+            <h4 class="fw-bold text-dark mb-3"><i class="fas fa-cogs text-success me-2"></i> Industrial Manufacturing Process</h4>
+            <p class="text-secondary" style="line-height: 1.8;">
+                Soya milk is manufactured from clean whole soya beans. The raw dry beans are first soaked in clean water for a minimum of 3 hours up to overnight depending on water temperature. Rehydrated beans then undergo wet grinding with water added in a <strong>10:1 ratio</strong> to produce slurry with 1% to 4% protein content.
+            </p>
+            <p class="text-secondary" style="line-height: 1.8;">
+                The slurry is brought to a boil for <strong>15–20 minutes</strong> with anti-foaming agents to heat-inactivate soybean trypsin inhibitors, eliminate raw bean smell, and sterilize the product. Insoluble Okara pulp is removed by centrifugal filtration, followed by sugar formulation, homogenizing, plate heat exchanger sterilization, and automatic pouch/carton packaging.
+            </p>
+        </div>
+
+        <!-- Step-by-Step Flowchart Grid -->
+        <div class="mt-5">
+            <h4 class="fw-bold text-dark text-center mb-4"><i class="fas fa-project-diagram text-primary me-2"></i> Step-by-Step Production Process Flow</h4>
+            <div class="row g-3">
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="process-flow-step">
+                        <div class="step-number">1</div>
+                        <h6 class="fw-bold text-dark mb-1">Soyabeans</h6>
+                        <small class="text-muted">Raw bean inspection</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="process-flow-step">
+                        <div class="step-number">2</div>
+                        <h6 class="fw-bold text-dark mb-1">Washing</h6>
+                        <small class="text-muted">Air-injection washing</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="process-flow-step">
+                        <div class="step-number">3</div>
+                        <h6 class="fw-bold text-dark mb-1">Soaking</h6>
+                        <small class="text-muted">3-8 hours rehydration</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="process-flow-step">
+                        <div class="step-number">4</div>
+                        <h6 class="fw-bold text-dark mb-1">Grinding</h6>
+                        <small class="text-muted">Wet grinding with water</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="process-flow-step">
+                        <div class="step-number">5</div>
+                        <h6 class="fw-bold text-dark mb-1">Filtration</h6>
+                        <small class="text-muted">Okara pulp separation</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="process-flow-step">
+                        <div class="step-number">6</div>
+                        <h6 class="fw-bold text-dark mb-1">Formulation</h6>
+                        <small class="text-muted">Sugar & flavor mixing</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="process-flow-step">
+                        <div class="step-number">7</div>
+                        <h6 class="fw-bold text-dark mb-1">Sterilization</h6>
+                        <small class="text-muted">Boiling & PHE pasteurizer</small>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-3">
+                    <div class="process-flow-step">
+                        <div class="step-number">8</div>
+                        <h6 class="fw-bold text-dark mb-1">Filling & Packaging</h6>
+                        <small class="text-muted">Pouch / bottle filling</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
 <footer class="main-footer">
     <div class="container">
         <div class="row">
@@ -241,12 +672,18 @@
                     <h3>ALFA TECH INDIA</h3>
                 </div>
                 <p class="footer-desc">Manufacturer of milking machines, soya milk plants, and complete dairy equipment with 30+ years of expertise.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/profile.php?id=100009574982786" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/alfatechindia/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+                </div>
             </div>
             <div class="col-md-2 col-6 mb-4">
                 <h5>Quick Links</h5>
                 <ul class="footer-links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="products.html">Our Products</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="videos.html">Videos</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
                 </ul>
             </div>
@@ -254,38 +691,46 @@
                 <h5>Products</h5>
                 <ul class="footer-links">
                     <li><a href="product-soya-milk.html">Soya Milk Plant</a></li>
-                    <li><a href="#">Milking Machines</a></li>
-                    <li><a href="#">Milk Analysers</a></li>
-                    <li><a href="#">Bulk Coolers</a></li>
+                    <li><a href="product-double-bucket.html">Milking Machines</a></li>
+                    <li><a href="product-milk-analyser.html">Milk Analysers</a></li>
+                    <li><a href="product-cream-separator.html">Cream Separators</a></li>
                 </ul>
             </div>
             <div class="col-md-3 mb-4">
                 <h5>Contact</h5>
                 <ul class="footer-contact">
-                    <li><i class="fas fa-map-marker-alt"></i> Shivajinagar, Pune - 411005</li>
-                    <li><i class="fas fa-phone"></i> 08047653483</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Shivajinagar, Pune - 411005, Maharashtra, India</li>
+                    <li><i class="fas fa-phone"></i> 9822020999</li>
+                    <li><i class="fas fa-envelope"></i> sales@alfatechindia.com</li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2025 Alfa Tech India. All Rights Reserved.</p>
+            <p>&copy; 2025 Alfa Tech India. All Rights Reserved. Dairy & Soya Processing Equipment Since 1990s.</p>
         </div>
     </div>
 </footer>
+
+<a href="https://wa.me/919822020999?text=Hello%2C%20I%20want%20information%20and%20quotation%20for%20Automatic%20Soya%20Milk%20Plant" class="floating-wa" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+<a href="#" id="backToTopBtn" class="back-top-btn"><i class="fas fa-arrow-up"></i></a>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script src="assets/js/script.js"></script>
 <script>
 AOS.init({ duration: 800, once: true });
+
 document.addEventListener('DOMContentLoaded', function() {
     const mainImage = document.getElementById('mainProductImage');
     const thumbnails = document.querySelectorAll('.thumbnail-img');
+    
     if(mainImage && thumbnails.length > 0) {
         thumbnails.forEach(function(thumb) {
             thumb.addEventListener('click', function() {
                 let newImageSrc = this.getAttribute('data-image') || this.getAttribute('src');
-                if(newImageSrc) mainImage.setAttribute('src', newImageSrc);
+                if(newImageSrc) {
+                    mainImage.setAttribute('src', newImageSrc);
+                }
                 thumbnails.forEach(t => t.classList.remove('active'));
                 this.classList.add('active');
             });
