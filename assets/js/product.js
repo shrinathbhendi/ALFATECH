@@ -108,7 +108,7 @@
                 name: 'Cream Separator Online (Model AEO-1)',
                 categorySlug: 'cream-separator',
                 categoryName: 'Cream Separator',
-                image: 'assets/images.png/Cream-Separator-AEO1-Catalog.png',
+                image: 'assets/images.png/Online-Milk-Separator-SS.png',
                 desc: 'High-speed 1000 LPH separation & 1200 LPH clarification online model. 7000-7200 RPM dynamically balanced bowl, 1 HP 440V 3-phase motor, and heavy cast iron frame.',
                 link: 'product-cream-separator.html'
             },
@@ -148,20 +148,20 @@
             },
             // Category: Pneumatic Paneer Press
             {
+                name: 'Four Head Pneumatic Paneer Press',
+                categorySlug: 'paneer-making-machine',
+                categoryName: 'Paneer Press',
+                image: 'assets/images.png/FOUR HRAD PNEUMATIC PANEER CUTTER.png',
+                desc: 'Industrial four head pneumatic paneer press machine with 1000kg+ production capacity, 1000L+ tank capacity, and SS 304 food-grade construction.',
+                link: 'product-four-head-pneumatic-paneer-press.html'
+            },
+            {
                 name: 'Pneumatic Paneer Press',
                 categorySlug: 'pneumatic-paneer-press',
                 categoryName: 'Paneer Press',
-                image: 'assets/images.png/press1.png',
-                desc: 'Heavy-duty pneumatic pressing machine for paneer blocks. Provides uniform pressure for consistent moisture removal and perfect block formation.',
-                link: 'product-paneer-press.html'
-            },
-            {
-                name: 'Pneumatic Press Machine',
-                categorySlug: 'pneumatic-paneer-press',
-                categoryName: 'Paneer Press',
-                image: 'assets/images.png/Pneumatic1.png',
-                desc: 'Industrial pneumatic press machine for efficient pressing. Built with robust materials for consistent and high-quality results.',
-                link: 'product-pneumatic-press-1.html'
+                image: 'assets/images.png/paneerpres.png',
+                desc: 'Single head pneumatic paneer press in SS 304 food-grade stainless steel with 10 Kg mold capacity (300 x 300 x 100 mm block size) operating at 4 kg/cm² air pressure.',
+                link: 'product-pneumatic-press.html'
             },
             // Category: Khawa Machine
             {
@@ -236,7 +236,7 @@
                 name: 'Double Chamber Vacuum Packaging Machine',
                 categorySlug: 'vacuum-packing-machine',
                 categoryName: 'Vacuum Packing Machine',
-                image: 'assets/images.png/photo25.png',
+                image: 'assets/images.png/producat1.png',
                 desc: 'Heavy duty SS304 500mm dual chamber vacuum packaging machine for high-speed continuous industrial packaging.',
                 link: 'product-double-chamber.html'
             },

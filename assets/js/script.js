@@ -34,7 +34,7 @@ const categoriesWithProducts = [
         name: 'Cream Separators',
         products: [
             { name: '1000LIT Online Cream Separator', price: 'Inquiry', image: 'assets/images.png/Online-Cream-Separator-1000LPH.png', link: 'product-cream-separator.html' },
-            { name: 'Cream Separator Online (Model AEO-1)', price: 'Inquiry', image: 'assets/images.png/Cream-Separator-AEO1-Catalog.png', link: 'product-cream-separator-standard.html' },
+            { name: 'Cream Separator Online (Model AEO-1)', price: 'Inquiry', image: 'assets/images.png/Online-Milk-Separator-SS.png', link: 'product-cream-separator-standard.html' },
             { name: 'Cream separator 300 lph', price: 'Inquiry', image: 'assets/images.png/NewCream1.png', link: 'product-cream.html' },
             { name: 'Cream separator 75 lph', price: 'Inquiry', image: 'assets/images.png/Newcrem3.png', link: 'product-alfa-cream.html' }
         ]
@@ -45,6 +45,7 @@ const categoriesWithProducts = [
         products: [
             { name: 'Alfa Digital Weighing Khawa Machine', price: '₹ 1,25,000', image: 'assets/images.png/khawa3.png', link: 'product-khoya-machine.html' },
             { name: 'Khowa Or Ghee Making Machine', price: '₹ 64,000', image: 'assets/images.png/photo12.png', link: 'product-khowa-machine.html' },
+            { name: 'Fully Automatic Ghee Making Plant (500 LPD)', price: 'Inquiry', image: 'assets/images.png/Ghee-Plant-Layout-500LPD.png', link: 'product-ghee-plant.html' },
             { name: 'Alfa Tech Mawa Making Machine', price: '₹ 65,000', image: 'assets/images.png/mawa1.png', link: 'product-mawa-machine.html' },
             { name: 'Alfa Tech India Portable Packing Machine', price: 'Inquiry', image: 'assets/images.png/khoya4.png', link: 'product-portable-packing.html' },
             { name: 'Multipurpose Khowa Machine', price: 'Inquiry', image: 'assets/images.png/new7.png', link: 'product-multipurpose-khowa.html' },
@@ -57,11 +58,12 @@ const categoriesWithProducts = [
         id: 5,
         name: 'Paneer Press',
         products: [
+            { name: 'Four Head Pneumatic Paneer Press', price: 'Inquiry', image: 'assets/images.png/FOUR HRAD PNEUMATIC PANEER CUTTER.png', link: 'product-four-head-pneumatic-paneer-press.html' },
             { name: 'Paneer Making Machine', price: '₹ 4,50,000', image: 'assets/images.png/paneer2.png', link: 'product-paneer-machine.html' },
-            { name: 'Alfa Paneer Wire Cutter', price: '₹ 35,000', image: 'assets/images.png/cutter1.png', link: 'product-paneer-wire-cutter.html' },
+            { name: 'Manual Paneer Cutter', price: '₹ 35,000', image: 'assets/images.png/cutter2.png', link: 'product-paneer-wire-cutter.html' },
             { name: 'Alfa Tech India Manual Paneer cutter', price: '₹ 20,000', image: 'assets/images.png/cutter5.png', link: 'product-manual-cutter.html' },
             { name: 'Alfa Tech India Paneer Press', price: '₹ 14,000', image: 'assets/images.png/press1.png', link: 'product-paneer-press.html' },
-            { name: 'Pneumatic Paneer Press', price: 'Inquiry', image: 'assets/images.png/new5.png', link: 'product-Pneumatic-Paneer-Press.html' }
+            { name: 'Pneumatic Paneer Press', price: 'Inquiry', image: 'assets/images.png/paneerpres.png', link: 'product-pneumatic-press.html' }
         ]
     },
     {
@@ -306,6 +308,7 @@ const SHARED_HEADER_HTML = `
                                     <ul>
                                         <li><a href="product-khoya-machine.html">Alfa Digital Weighing Khawa Machine</a></li>
                                         <li><a href="product-khowa-machine.html">Khowa Or Ghee Making Machine</a></li>
+                                        <li><a href="product-ghee-plant.html">Fully Automatic Ghee Making Plant</a></li>
                                         <li><a href="product-portable-packing.html">Alfa Tech India Portable Packing Machine</a></li>
                                     </ul>
                                     <div class="more-link"><a href="products.html#khoya">+ More</a></div>
@@ -314,6 +317,7 @@ const SHARED_HEADER_HTML = `
                                 <div class="dropdown-col">
                                     <h4>Paneer Press</h4>
                                     <ul>
+                                        <li><a href="product-four-head-pneumatic-paneer-press.html">Four Head Pneumatic Paneer Press</a></li>
                                         <li><a href="product-paneer-machine.html">Paneer Making Machine</a></li>
                                         <li><a href="product-paneer-wire-cutter.html">Alfa Paneer Wire Cutter</a></li>
                                         <li><a href="product-manual-cutter.html">Alfa Tech India Manual Paneer cutter machine</a></li>
@@ -690,32 +694,48 @@ function initProductFilters() {
     });
 }
 
-// ========== PRODUCT OVERVIEW SECTION WITH HORIZONTAL RIGHT-TO-LEFT MARQUEE ==========
+// ========== PRODUCT OVERVIEW SECTION WITH HORIZONTAL MARQUEE TRACKS ==========
 function initProductOverview() {
     const marqueeTrack = document.getElementById('productMarqueeTrack');
-    if (!marqueeTrack) return;
+    const marqueeTrackReverse = document.getElementById('productMarqueeTrackReverse');
+    if (!marqueeTrack && !marqueeTrackReverse) return;
 
-    const productsList = [
-        { title: 'Australia Site Plant', desc: 'Turnkey industrial dairy processing setup commissioned globally.', image: 'assets/images.png/Newplant.png', link: 'product-plant.html' },
-        { title: 'Bulk Milk Coolers', desc: 'Industrial grade coolers to maintain milk freshness.', image: 'assets/images.png/Bulk-milk-0coolers1.png', link: 'product-bulk-cooler.html' },
+    // Track 1 Products (Moving Right to Left)
+    const productsTrack1 = [
         { title: 'Cheese Production Line', desc: 'Commercial cheese production solutions with curd cutter & stretcher.', image: 'assets/images.png/Cheese-Production-Line.png', link: 'product-cheese-production.html' },
         { title: 'Paneer Plant', desc: 'Commercial paneer making and pressing machines.', image: 'assets/images.png/paneer2.png', link: 'product-paneer-machine.html' },
         { title: 'Ghee Making Plant', desc: 'Turnkey ghee manufacturing plant with butter churner & kettle.', image: 'assets/images.png/Ghee-Plant-Layout-500LPD.png', link: 'product-ghee-plant.html' },
         { title: 'Curd Plant', desc: 'Complete setup for curd/yogurt processing & cooling.', image: 'assets/images.png/new2.png', link: 'product-curd-incubation.html' },
         { title: 'Khoya / Mawa Machines', desc: 'Automatic khoya making machines for consistent product quality.', image: 'assets/images.png/mawa1.png', link: 'product-khoya-machine.html' },
-        { title: 'Cream Separator 300 LPH', desc: 'Centrifugal separators for optimal fat recovery.', image: 'assets/images.png/NewCream1.png', link: 'product-cream-separator.html' },
+        { title: 'Pneumatic Paneer Press', desc: 'Single head SS 304 pneumatic press with 10 Kg mold capacity.', image: 'assets/images.png/paneerpres.png', link: 'product-pneumatic-press.html' },
+        { title: 'Four Head Pneumatic Press', desc: 'Industrial 4-head pneumatic paneer press for high capacity.', image: 'assets/images.png/FOUR HRAD PNEUMATIC PANEER CUTTER.png', link: 'product-four-head-pneumatic-paneer-press.html' },
+        { title: 'Australia Site Plant', desc: 'Turnkey industrial dairy processing setup commissioned globally.', image: 'assets/images.png/Newplant.png', link: 'product-plant.html' },
+        { title: 'Bulk Milk Coolers', desc: 'Industrial grade coolers to maintain milk freshness.', image: 'assets/images.png/Bulk-milk-0coolers1.png', link: 'product-bulk-cooler.html' },
+        { title: '1000 LPH Cream Separator', desc: 'Centrifugal online separators for optimal fat recovery.', image: 'assets/images.png/Online-Cream-Separator-1000LPH.png', link: 'product-cream-separator.html' },
         { title: 'Milking Machines', desc: 'High-quality milking machines for efficient dairy farming.', image: 'assets/withoutengin.png', link: 'product-double-bucket.html' },
-        { title: 'Solid Fuel Steam Boiler', desc: 'High efficiency wood and coal fired steam boiler.', image: 'assets/images.png/Gheeplant-2.png', link: 'product-steam-boiler-solid.html' },
-        { title: 'Band Sealer Machine', desc: 'High-speed continuous packaging for dairy and food products.', image: 'assets/images.png/sealing.png', link: 'sealing-machine.html' },
+        { title: 'Solid Fuel Steam Boiler', desc: 'High efficiency wood and coal fired steam boiler.', image: 'assets/images.png/Gheeplant-2.png', link: 'product-steam-boiler-solid.html' }
+    ];
+
+    // Track 2 Products (Moving Left to Right - All Remaining Products)
+    const productsTrack2 = [
+        { title: 'Manual Paneer Press', desc: 'Mechanical screw press in heavy duty stainless steel.', image: 'assets/images.png/press1.png', link: 'product-paneer-press.html' },
+        { title: 'Pneumatic Paneer Cutter', desc: 'Pneumatic slab & cube cutter with food-grade SS blades.', image: 'assets/images.png/cutter2.png', link: 'product-pneumatic-cutter.html' },
+        { title: 'Whey Cream Separator', desc: '500 LPH SS 304 separator for continuous whey cream extraction.', image: 'assets/images.png/photo26.png', link: 'product-whey-separator.html' },
+        { title: 'Milk Processing Plant', desc: 'Complete commercial milk processing plant with pasteurizer.', image: 'assets/images.png/Newplant1.png', link: 'product-milk-processing-plant.html' },
+        { title: 'Continuous Band Sealer', desc: 'High-speed horizontal continuous sealing for pouch packaging.', image: 'assets/images.png/continuous-band-sealing-machine.png', link: 'sealing-machine.html' },
         { title: 'Cup Sealer Machine', desc: 'Hygienic sealing for curd, yogurt and lassi cups.', image: 'assets/images.png/new6.png', link: 'product-rotary-cup-sealing.html' },
-        { title: 'Pouch Packing Machine', desc: 'Automatic solutions for filling and sealing milk in pouches.', image: 'assets/punch.png', link: 'product-pouch-auto.html' },
-        { title: 'Electronic Weighing Scale', desc: 'Heavy duty scales for bulk milk cans weighing.', image: 'assets/images.png/Electronic weighing scale 300lit.png', link: 'product-electronic-weighing-scale.html' },
-        { title: 'Soya Milk Plant', desc: 'Complete production line for extraction of soya milk.', image: 'assets/images.png/new10.png', link: 'product-soya-milk-plant.html' },
-        { title: 'Electronic Platform Scale', desc: 'Precision digital platform scales for milk measurement.', image: 'assets/electronic.png', link: 'product-platform-weighing-scale.html' },
-        { title: 'Automatic Milk Collection Unit', desc: 'Advanced systems for milk collection and fat analysis.', image: 'assets/images.png/Essae-milk-analyzer.png', link: 'product-milk-analyser.html' },
-        { title: 'Portable Milking Machine', desc: 'Compact and mobile milking solution for small farms.', image: 'assets/images.png/Portable Single Bucket Milking Machine.jpeg', link: 'product-portable-single-bucket.html' },
+        { title: 'Pouch Packing Machine', desc: 'Automatic solutions for volumetric filling and sealing in pouches.', image: 'assets/punch.png', link: 'product-pouch-auto.html' },
+        { title: 'Tabletop Vacuum Packaging', desc: 'Single chamber tabletop vacuum machine for paneer & mawa.', image: 'assets/images.png/vaccum2.png', link: 'product-tabletop-vacuum.html' },
+        { title: 'Double Chamber Vacuum Machine', desc: 'Heavy duty SS 304 dual chamber high-speed vacuum packaging.', image: 'assets/images.png/producat1.png', link: 'product-double-chamber.html' },
+        { title: 'Multi-Parameter Milk Analyser', desc: 'Rapid analysis of FAT, SNF, protein, lactose & density.', image: 'assets/images.png/dyna-milk-analyzer.png', link: 'product-milk-analyser.html' },
+        { title: 'AMCU Data Processing Unit', desc: 'Centralized milk collection center data unit with scale sync.', image: 'assets/images.png/Data processing unit.png', link: 'product-data-processing-unit.html' },
+        { title: 'RMRD Weighing Scale Dock', desc: '500 LPH raw milk reception scale with 500L SS weigh bowl.', image: 'assets/images.png/photo22.png', link: 'product-weighing-digital.html' },
+        { title: 'Electronic Platform Scale', desc: 'Precision digital platform scale for bulk milk measurement.', image: 'assets/electronic.png', link: 'product-platform-weighing-scale.html' },
+        { title: 'Soya Milk Plant', desc: 'Complete extraction plant for soya milk & soya paneer.', image: 'assets/images.png/new10.png', link: 'product-soya-milk-plant.html' },
+        { title: 'Portable Milking Machine', desc: 'Compact and mobile milking solution for small dairy farms.', image: 'assets/images.png/Portable Single Bucket Milking Machine.jpeg', link: 'product-portable-single-bucket.html' },
         { title: 'Shrikhand Blender', desc: 'Planetary Shrikhand blender with SS 304 food grade body.', image: 'assets/images.png/Shrikhand-Blender.png', link: 'product-shrikhand-blender.html' },
-        { title: 'Curd Incubation Chamber', desc: 'Combo curd incubation chamber with heating and cooling.', image: 'assets/images.png/Curd-Incubation-Chamber.png', link: 'product-curd-incubation.html' }
+        { title: 'Curd Incubation Chamber', desc: 'Combo curd incubation chamber with heating and cooling.', image: 'assets/images.png/Curd-Incubation-Chamber.png', link: 'product-curd-incubation.html' },
+        { title: 'Stainless Steel Cooling Tank', desc: 'Direct expansion DX milk cooling tank with laser evaporators.', image: 'assets/images.png/Stainless Steel Milk Cooling Tank.png', link: 'product-bulk-cooler.html' }
     ];
 
     const createCardHtml = (item) => `
@@ -725,7 +745,6 @@ function initProductOverview() {
             </div>
             <div class="marquee-card-content">
                 <h4 class="marquee-card-title">${item.title}</h4>
-                <p class="marquee-card-desc">${item.desc}</p>
                 <div>
                     <a href="${item.link}" class="marquee-card-btn">Explore Details &rarr;</a>
                 </div>
@@ -733,12 +752,19 @@ function initProductOverview() {
         </div>
     `;
 
-    let html = '';
-    productsList.forEach(item => { html += createCardHtml(item); });
-    // Duplicate set for seamless continuous 100% infinite marquee loop
-    productsList.forEach(item => { html += createCardHtml(item); });
+    if (marqueeTrack) {
+        let html1 = '';
+        productsTrack1.forEach(item => { html1 += createCardHtml(item); });
+        productsTrack1.forEach(item => { html1 += createCardHtml(item); });
+        marqueeTrack.innerHTML = html1;
+    }
 
-    marqueeTrack.innerHTML = html;
+    if (marqueeTrackReverse) {
+        let html2 = '';
+        productsTrack2.forEach(item => { html2 += createCardHtml(item); });
+        productsTrack2.forEach(item => { html2 += createCardHtml(item); });
+        marqueeTrackReverse.innerHTML = html2;
+    }
 }
 
 // ========== ADD ANIMATION KEYFRAMES ==========
