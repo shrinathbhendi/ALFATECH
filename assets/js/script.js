@@ -408,7 +408,7 @@ const SHARED_FOOTER_HTML = `
                     <li><i class="fas fa-building"></i> <span><strong>Regd. Office:</strong> 401, 1717 Zenith Complex, Opp. Krushi Bhavan, Shivaji Nagar, Pune.</span></li>
                     <li><i class="fas fa-wrench"></i> <span><strong>Service Center:</strong> Malvankar Industrial Estate, Near RTO, Sangambridge, Pune.</span></li>
                     <li><i class="fas fa-phone"></i> <span>9822020999 / 020-25530399 / 020-66010999 / 9850584191</span></li>
-                    <li><i class="fas fa-envelope"></i> <span>sales@alfatechindia.com / customercare@alfatechindia.com</span></li>
+                    <li><i class="fas fa-envelope"></i> <span>sales@alfatechindia.com / customer_care@alfatechindia.com</span></li>
                     <li><i class="fas fa-globe"></i> <span>alfatechindia.com</span></li>
                 </ul>
             </div>
