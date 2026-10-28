@@ -358,6 +358,24 @@ const SHARED_HEADER_HTML = `
                     </li>
                     <li><a href="videos.html">Videos</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
+                    <li class="nav-lang-item notranslate">
+                        <div class="lang-dropdown-wrapper">
+                            <button class="lang-dropdown-btn" id="langDropdownBtn" type="button" aria-expanded="false" aria-label="Select Language">
+                                <i class="fas fa-globe globe-icon"></i>
+                                <span class="lang-btn-text" id="selectedLangText">Select language</span>
+                                <i class="fas fa-chevron-down chevron-icon" id="langChevron"></i>
+                            </button>
+                            <div class="lang-dropdown-menu" id="langDropdownMenu">
+                                <div class="lang-search-box">
+                                    <input type="text" class="lang-search-input" id="langSearchInput" placeholder="Search language..." autocomplete="off">
+                                </div>
+                                <ul class="lang-items-list" id="langItemsList">
+                                    <!-- Populated dynamically via JS -->
+                                </ul>
+                                <div class="no-lang-match" id="noLangMatch">No language found</div>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -426,6 +444,9 @@ function syncSharedLayout() {
     const header = document.querySelector('.top-header-section');
     if (header) {
         header.outerHTML = SHARED_HEADER_HTML;
+        if (typeof initLanguageSelector === 'function') {
+            initLanguageSelector();
+        }
     }
 
     document.querySelectorAll('.floating-wa, .floating-call, .back-top-btn').forEach(button => button.remove());
@@ -1316,6 +1337,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initClientMarqueeControls(); // Initialize client slider arrows
     initUniversalCategorySlider(); // Universal related category products slider for all product pages
     initMutedVideos(); // Force mute and 0 volume on all video elements
+    initLanguageSelector(); // Initialize multi-language selector
+    ensureGoogleTranslateLoaded(); // Ensure Google Translate script is ready
 });
 
 // ========== MUTE ALL VIDEOS FUNCTIONALITY ==========
@@ -1338,3 +1361,253 @@ function initMutedVideos() {
         });
     });
 }
+
+// ==========================================================================
+// ========== MULTI-LANGUAGE TRANSLATION CONTROLLER & SELECTOR ==============
+// ==========================================================================
+
+const SITE_LANGUAGES = [
+    { code: 'en', name: 'English', native: 'English' },
+    { code: 'hi', name: 'Hindi', native: 'हिन्दी' },
+    { code: 'mr', name: 'Marathi', native: 'मराठी' },
+    { code: 'gu', name: 'Gujarati', native: 'ગુજરાતી' },
+    { code: 'bn', name: 'Bengali', native: 'বাংলা' },
+    { code: 'ta', name: 'Tamil', native: 'தமிழ்' },
+    { code: 'te', name: 'Telugu', native: 'తెలుగు' },
+    { code: 'kn', name: 'Kannada', native: 'ಕನ್ನಡ' },
+    { code: 'ml', name: 'Malayalam', native: 'മലയാളം' },
+    { code: 'pa', name: 'Punjabi', native: 'ਪੰਜਾਬੀ' },
+    { code: 'ur', name: 'Urdu', native: 'اردو' },
+    { code: 'or', name: 'Odia', native: 'ଓଡ଼ିଆ' },
+    { code: 'as', name: 'Assamese', native: 'অসমীয়া' },
+    { code: 'es', name: 'Spanish', native: 'Español' },
+    { code: 'fr', name: 'French', native: 'Français' },
+    { code: 'ar', name: 'Arabic', native: 'العربية' },
+    { code: 'de', name: 'German', native: 'Deutsch' },
+    { code: 'ru', name: 'Russian', native: 'Русский' }
+];
+
+function getStoredLanguage() {
+    try {
+        const local = localStorage.getItem('alfatech_user_lang');
+        if (local && SITE_LANGUAGES.some(l => l.code === local)) {
+            return local;
+        }
+        const match = document.cookie.match(/googtrans=\/(?:auto|en)\/([a-z]{2,5})/i);
+        if (match && match[1] && SITE_LANGUAGES.some(l => l.code === match[1])) {
+            return match[1];
+        }
+    } catch (e) {
+        console.warn('Language storage read error:', e);
+    }
+    return 'en';
+}
+
+function initLanguageSelector() {
+    const btn = document.getElementById('langDropdownBtn');
+    const menu = document.getElementById('langDropdownMenu');
+    const searchInput = document.getElementById('langSearchInput');
+    const listContainer = document.getElementById('langItemsList');
+    const selectedText = document.getElementById('selectedLangText');
+    const noMatch = document.getElementById('noLangMatch');
+
+    if (!btn || !menu || !listContainer) return;
+
+    let currentLang = getStoredLanguage();
+
+    function updateButtonLabel() {
+        if (!selectedText) return;
+        const current = SITE_LANGUAGES.find(l => l.code === currentLang);
+        if (current) {
+            if (current.code === 'en') {
+                selectedText.textContent = 'English';
+            } else {
+                selectedText.textContent = `${current.native} (${current.name})`;
+            }
+        } else {
+            selectedText.textContent = 'Select language';
+        }
+    }
+
+    function renderLanguages(filter = '') {
+        listContainer.innerHTML = '';
+        const q = filter.trim().toLowerCase();
+        let matches = 0;
+
+        SITE_LANGUAGES.forEach(lang => {
+            const label = lang.code === 'en' ? 'English' : `${lang.native} (${lang.name})`;
+            const matchesSearch = !q || 
+                lang.name.toLowerCase().includes(q) || 
+                lang.native.toLowerCase().includes(q) || 
+                label.toLowerCase().includes(q);
+
+            if (matchesSearch) {
+                matches++;
+                const li = document.createElement('li');
+                li.className = `lang-item ${lang.code === currentLang ? 'selected' : ''}`;
+                li.dataset.code = lang.code;
+                li.innerHTML = `
+                    <span>${label}</span>
+                    <i class="fas fa-check check-icon"></i>
+                `;
+                li.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    selectLanguage(lang.code);
+                });
+                listContainer.appendChild(li);
+            }
+        });
+
+        if (noMatch) {
+            noMatch.style.display = matches === 0 ? 'block' : 'none';
+        }
+    }
+
+    function toggleDropdown(show) {
+        const isOpen = show !== undefined ? show : !menu.classList.contains('show');
+        if (isOpen) {
+            menu.classList.add('show');
+            btn.classList.add('open');
+            btn.setAttribute('aria-expanded', 'true');
+            if (searchInput) {
+                searchInput.value = '';
+                renderLanguages('');
+                setTimeout(() => searchInput.focus(), 60);
+            }
+        } else {
+            menu.classList.remove('show');
+            btn.classList.remove('open');
+            btn.setAttribute('aria-expanded', 'false');
+        }
+    }
+
+    btn.onclick = function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        toggleDropdown();
+    };
+
+    menu.onclick = function(e) {
+        e.stopPropagation();
+    };
+
+    if (searchInput) {
+        searchInput.oninput = function(e) {
+            renderLanguages(e.target.value);
+        };
+    }
+
+    window.selectLanguage = function(code) {
+        currentLang = code;
+        try {
+            localStorage.setItem('alfatech_user_lang', code);
+        } catch (e) {}
+
+        const cookieVal = code === 'en' ? '' : `/auto/${code}`;
+        const domain = window.location.hostname;
+        const cookiePath = '/';
+        const expires = code === 'en' ? 'Thu, 01 Jan 1970 00:00:00 UTC' : 'Fri, 31 Dec 2030 23:59:59 GMT';
+
+        document.cookie = `googtrans=${cookieVal}; expires=${expires}; path=${cookiePath};`;
+        if (domain && domain !== 'localhost') {
+            document.cookie = `googtrans=${cookieVal}; expires=${expires}; path=${cookiePath}; domain=${domain};`;
+            document.cookie = `googtrans=${cookieVal}; expires=${expires}; path=${cookiePath}; domain=.${domain};`;
+        }
+
+        updateButtonLabel();
+        renderLanguages();
+        toggleDropdown(false);
+
+        if (code === 'en') {
+            const select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = '';
+                select.dispatchEvent(new Event('change'));
+            }
+            setTimeout(() => {
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + window.location.hostname + "; path=/;";
+                window.location.reload();
+            }, 100);
+        } else {
+            const select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = code;
+                select.dispatchEvent(new Event('change'));
+            } else {
+                setTimeout(() => {
+                    const retrySelect = document.querySelector('.goog-te-combo');
+                    if (retrySelect) {
+                        retrySelect.value = code;
+                        retrySelect.dispatchEvent(new Event('change'));
+                    } else {
+                        window.location.reload();
+                    }
+                }, 200);
+            }
+        }
+    };
+
+    document.addEventListener('click', function(e) {
+        if (!menu.contains(e.target) && !btn.contains(e.target)) {
+            toggleDropdown(false);
+        }
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            toggleDropdown(false);
+        }
+    });
+
+    updateButtonLabel();
+    renderLanguages();
+}
+
+window.googleTranslateElementInit = function() {
+    try {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            includedLanguages: SITE_LANGUAGES.map(l => l.code).join(','),
+            autoDisplay: false
+        }, 'google_translate_element');
+
+        const saved = getStoredLanguage();
+        if (saved && saved !== 'en') {
+            let attempts = 0;
+            const interval = setInterval(function() {
+                attempts++;
+                const select = document.querySelector('.goog-te-combo');
+                if (select) {
+                    clearInterval(interval);
+                    if (select.value !== saved) {
+                        select.value = saved;
+                        select.dispatchEvent(new Event('change'));
+                    }
+                } else if (attempts > 30) {
+                    clearInterval(interval);
+                }
+            }, 150);
+        }
+    } catch (err) {
+        console.warn('Google Translate initialization error:', err);
+    }
+};
+
+function ensureGoogleTranslateLoaded() {
+    if (!document.getElementById('google_translate_element')) {
+        const div = document.createElement('div');
+        div.id = 'google_translate_element';
+        div.style.display = 'none';
+        document.body.appendChild(div);
+    }
+
+    if (!document.querySelector('script[src*="translate.google.com/translate_a/element.js"]')) {
+        const script = document.createElement('script');
+        script.type = 'text/javascript';
+        script.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+        script.async = true;
+        document.body.appendChild(script);
+    }
+}
+
