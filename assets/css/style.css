@@ -1093,12 +1093,7 @@ body > .skiptranslate:first-child {
 }
 
 .si-card-badge {
-    font-size: 0.75rem;
-    font-weight: 700;
-    letter-spacing: 0.3px;
-    color: #0d3b66;
-    background: #ffffff;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: none !important;
 }
 
 @media (max-width: 767.98px) {

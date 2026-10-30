@@ -18,9 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let html = '';
 
         // Helper to get product price HTML
-        const getProductPriceHtml = (price) => {
-            return price && price.toLowerCase() !== 'inquiry' ? `<div class="product-price">${price}</div>` : '';
-        };
+        const getProductPriceHtml = (price) => '';
 
         categoriesWithProducts.forEach(category => {
             const productsToDisplay = category.products;

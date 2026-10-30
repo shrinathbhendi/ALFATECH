@@ -624,9 +624,6 @@
                 gridHtml += `
                     <div class="col grid-item-animate">
                         <div class="si-product-card h-100 bg-white rounded-4 overflow-hidden border shadow-sm transition-all position-relative d-flex flex-column">
-                            <span class="si-card-badge position-absolute top-0 start-0 m-3 px-3 py-1 bg-white rounded-pill shadow-sm border" style="z-index: 2; font-size: 0.76rem; color: #0d3b66; font-weight: 700;">
-                                ${prod.categoryName}
-                            </span>
                             <a href="${prod.link}" class="si-card-img-wrapper d-flex align-items-center justify-content-center overflow-hidden position-relative w-100 text-decoration-none ${imgPadding}" style="height: 240px; background: #f8fafc; cursor: pointer;">
                                 <img src="${prod.image}" alt="${prod.name}" class="img-fluid" style="${imgFitStyle} display: block; margin: auto; transition: transform 0.35s ease;" onerror="this.onerror=null; this.src='assets/images.png/Newplant1.png';">
                             </a>

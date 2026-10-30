@@ -10,15 +10,15 @@ const categoriesWithProducts = [
         id: 1,
         name: 'Milking Machines',
         products: [
-            { name: 'Double Bucket Milking Machine without Engine', price: '₹ 69,000', image: 'assets/images.png/doublebucket1.png', link: 'product-double-bucket.html' },
-            { name: 'Alfa Tech India Single Bucket Fixed machine', price: '₹ 35,000', image: 'assets/images.png/photo19.png', link: 'product-single-bucket.html' },
+            { name: 'Double Bucket Milking Machine without Engine', price: 'Inquiry', image: 'assets/images.png/doublebucket1.png', link: 'product-double-bucket.html' },
+            { name: 'Alfa Tech India Single Bucket Fixed machine', price: 'Inquiry', image: 'assets/images.png/photo19.png', link: 'product-single-bucket.html' },
             { name: 'Portable Single Bucket Milking Machine', price: 'Inquiry', image: 'assets/images.png/Portable Single Bucket Milking Machine.jpeg', link: 'product-portable-single-bucket.html' },
-            { name: 'Alfa Tech India Double Bucket Milking Machine with Engine', price: '₹ 69,000', image: 'assets/images.png/photo18.png', link: 'product-double-bucket-engine.html' },
-            { name: 'Alfa Tech Trolly Milking Machine', price: '₹ 33,000', image: 'assets/images.png/photo20.png', link: 'product-trolly-milking.html' },
+            { name: 'Alfa Tech India Double Bucket Milking Machine with Engine', price: 'Inquiry', image: 'assets/images.png/photo18.png', link: 'product-double-bucket-engine.html' },
+            { name: 'Alfa Tech Trolly Milking Machine', price: 'Inquiry', image: 'assets/images.png/photo20.png', link: 'product-trolly-milking.html' },
             { name: 'Milking Machine Four Bucket', price: 'Inquiry', image: 'assets/images.png/four2.png', link: 'product-four-bucket.html' },
-            { name: 'Transparent Milking Machine Claw (350cc)', price: '₹ 1,800', image: 'assets/images.png/photo0011.png', link: 'product-milking-claw.html' },
-            { name: 'Pneumatic Milking Pulsator (60/40 Ratio)', price: '₹ 2,500', image: 'assets/images.png/photo0022.png', link: 'product-milking-pulsator.html' },
-            { name: 'Milking Machine Parts', price: '₹ 1,200', image: 'assets/images.png/machinepart2.png', link: 'product-milking-parts.html' }
+            { name: 'Transparent Milking Machine Claw (350cc)', price: 'Inquiry', image: 'assets/images.png/photo0011.png', link: 'product-milking-claw.html' },
+            { name: 'Pneumatic Milking Pulsator (60/40 Ratio)', price: 'Inquiry', image: 'assets/images.png/photo0022.png', link: 'product-milking-pulsator.html' },
+            { name: 'Milking Machine Parts', price: 'Inquiry', image: 'assets/images.png/machinepart2.png', link: 'product-milking-parts.html' }
         ]
     },
     {
@@ -45,10 +45,10 @@ const categoriesWithProducts = [
         id: 4,
         name: 'Khoya / Mawa Machines',
         products: [
-            { name: 'Alfa Digital Weighing Khawa Machine', price: '₹ 1,25,000', image: 'assets/images.png/khawa3.png', link: 'product-khoya-machine.html' },
-            { name: 'Khowa Or Ghee Making Machine', price: '₹ 64,000', image: 'assets/images.png/photo12.png', link: 'product-khowa-machine.html' },
+            { name: 'Alfa Digital Weighing Khawa Machine', price: 'Inquiry', image: 'assets/images.png/khawa3.png', link: 'product-khoya-machine.html' },
+            { name: 'Khowa Or Ghee Making Machine', price: 'Inquiry', image: 'assets/images.png/photo12.png', link: 'product-khowa-machine.html' },
             { name: 'Fully Automatic Ghee Making Plant (500 LPD)', price: 'Inquiry', image: 'assets/images.png/Ghee-Plant-Layout-500LPD.png', link: 'product-ghee-plant.html' },
-            { name: 'Alfa Tech Mawa Making Machine', price: '₹ 65,000', image: 'assets/images.png/mawa1.png', link: 'product-mawa-machine.html' },
+            { name: 'Alfa Tech Mawa Making Machine', price: 'Inquiry', image: 'assets/images.png/mawa1.png', link: 'product-mawa-machine.html' },
             { name: 'Alfa Tech India Portable Packing Machine', price: 'Inquiry', image: 'assets/images.png/khoya4.png', link: 'product-portable-packing.html' },
             { name: 'Multipurpose Khowa Machine', price: 'Inquiry', image: 'assets/images.png/new7.png', link: 'product-multipurpose-khowa.html' },
             { name: 'Induction Khawa Machine', price: 'Inquiry', image: 'assets/images.png/new2.png', link: 'product-induction-khowa.html' },
@@ -61,10 +61,10 @@ const categoriesWithProducts = [
         name: 'Paneer Press',
         products: [
             { name: 'Four Head Pneumatic Paneer Press', price: 'Inquiry', image: 'assets/images.png/FOUR HRAD PNEUMATIC PANEER CUTTER.png', link: 'product-four-head-pneumatic-paneer-press.html' },
-            { name: 'Paneer Making Machine', price: '₹ 4,50,000', image: 'assets/images.png/paneer2.png', link: 'product-paneer-machine.html' },
-            { name: 'Manual Paneer Cutter', price: '₹ 35,000', image: 'assets/images.png/cutter2.png', link: 'product-paneer-wire-cutter.html' },
-            { name: 'Alfa Tech India Manual Paneer cutter', price: '₹ 20,000', image: 'assets/images.png/cutter5.png', link: 'product-manual-cutter.html' },
-            { name: 'Alfa Tech India Paneer Press', price: '₹ 14,000', image: 'assets/images.png/press1.png', link: 'product-paneer-press.html' },
+            { name: 'Paneer Making Machine', price: 'Inquiry', image: 'assets/images.png/paneer2.png', link: 'product-paneer-machine.html' },
+            { name: 'Manual Paneer Cutter', price: 'Inquiry', image: 'assets/images.png/cutter2.png', link: 'product-paneer-wire-cutter.html' },
+            { name: 'Alfa Tech India Manual Paneer cutter', price: 'Inquiry', image: 'assets/images.png/cutter5.png', link: 'product-manual-cutter.html' },
+            { name: 'Alfa Tech India Paneer Press', price: 'Inquiry', image: 'assets/images.png/press1.png', link: 'product-paneer-press.html' },
             { name: 'Pneumatic Paneer Press', price: 'Inquiry', image: 'assets/images.png/paneerpres.png', link: 'product-pneumatic-press.html' }
         ]
     },
@@ -81,8 +81,8 @@ const categoriesWithProducts = [
         id: 33,
         name: 'Milk Cans',
         products: [
-            { name: 'Stainless Steel Milk Can', price: '₹ 4,500', image: 'assets/images.png/Stainless-steel-304-20-ltr-40-ltr.jpeg', link: 'product-milk-can-ss.html' },
-            { name: 'Aluminium Milk Can (20L / 40L)', price: '₹ 3,900', image: 'assets/images.png/Aluminium-Can-20-ltr-40-ltr.png', link: 'product-milk-can-al.html' }
+            { name: 'Stainless Steel Milk Can', price: 'Inquiry', image: 'assets/images.png/Stainless-steel-304-20-ltr-40-ltr.jpeg', link: 'product-milk-can-ss.html' },
+            { name: 'Aluminium Milk Can (20L / 40L)', price: 'Inquiry', image: 'assets/images.png/Aluminium-Can-20-ltr-40-ltr.png', link: 'product-milk-can-al.html' }
         ]
     },
     {
@@ -112,7 +112,7 @@ const categoriesWithProducts = [
         id: 6,
         name: 'Bulk Milk Coolers',
         products: [
-            { name: 'Alfa Tech Bulk Milk Cooler', price: '₹ 2,50,000', image: 'assets/images.png/Bulk-milk-0coolers1.png', link: 'product-bulk-cooler.html' }
+            { name: 'Alfa Tech Bulk Milk Cooler', price: 'Inquiry', image: 'assets/images.png/Bulk-milk-0coolers1.png', link: 'product-bulk-cooler.html' }
         ]
     },
     {
@@ -215,7 +215,7 @@ const categoriesWithProducts = [
     },
     {
         id: 31,
-        name: 'Australia Site Plant',
+        name: 'Paneer Plant_ Exported',
         products: [
             { name: 'Plant Machine Orgnization', price: 'Inquiry', image: 'assets/images.png/Newplant.png', link: 'product-plant.html' }
         ]
@@ -732,7 +732,7 @@ function initProductOverview() {
         { title: 'Khoya / Mawa Machines', desc: 'Automatic khoya making machines for consistent product quality.', image: 'assets/images.png/mawa1.png', link: 'product-khoya-machine.html' },
         { title: 'Pneumatic Paneer Press', desc: 'Single head SS 304 pneumatic press with 10 Kg mold capacity.', image: 'assets/images.png/paneerpres.png', link: 'product-pneumatic-press.html' },
         { title: 'Four Head Pneumatic Press', desc: 'Industrial 4-head pneumatic paneer press for high capacity.', image: 'assets/images.png/FOUR HRAD PNEUMATIC PANEER CUTTER.png', link: 'product-four-head-pneumatic-paneer-press.html' },
-        { title: 'Australia Site Plant', desc: 'Turnkey industrial dairy processing setup commissioned globally.', image: 'assets/images.png/Newplant.png', link: 'product-plant.html' },
+        { title: 'Paneer Plant_ Exported', desc: 'Turnkey industrial dairy processing setup commissioned globally.', image: 'assets/images.png/Newplant.png', link: 'product-plant.html' },
         { title: 'Bulk Milk Coolers', desc: 'Industrial grade coolers to maintain milk freshness.', image: 'assets/images.png/Bulk-milk-0coolers1.png', link: 'product-bulk-cooler.html' },
         { title: '1000 LPH Cream Separator', desc: 'Centrifugal online separators for optimal fat recovery.', image: 'assets/images.png/Online-Cream-Separator-1000LPH.png', link: 'product-cream-separator.html' },
         { title: 'Transparent Milking Machine Claw', desc: '350cc high capacity transparent acrylic milking claw with SS base plate & shut-off valve.', image: 'assets/images.png/photo0011.png', link: 'product-milking-claw.html' },
